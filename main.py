@@ -88,22 +88,17 @@ class Laser:
         self.new_laser = True
 
     def generate_laser(self):
-        laser_type = random.randint(0, 1)
+        # Generate a vertical laser with a random x-position and a random height
         offset = random.randint(10, 300)
-        if laser_type == 0:
-            laser_width = random.randint(100, 300)
-            laser_y = random.randint(100, HEIGHT - 100)
-            new_lase = [
-                [WIDTH + offset, laser_y],
-                [WIDTH + offset + laser_width, laser_y],
-            ]
-        else:
-            laser_height = random.randint(100, 300)
-            laser_y = random.randint(100, HEIGHT - 400)
-            new_lase = [
-                [WIDTH + offset, laser_y],
-                [WIDTH + offset, laser_y + laser_height],
-            ]
+        laser_x = WIDTH + offset  # The laser starts off-screen to the right
+        laser_height = random.randint(100, 300)
+        laser_y_top = random.randint(
+            100, HEIGHT - laser_height - 100
+        )  # Random y position, ensuring it fits within screen
+        new_lase = [
+            [laser_x, laser_y_top],
+            [laser_x, laser_y_top + laser_height],
+        ]  # Vertical laser
         self.lasers.append(new_lase)
 
     def update(self, game_speed):
