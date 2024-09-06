@@ -1,5 +1,8 @@
 import random
 import pygame
+import torch
+
+from Population import Population
 
 # Constants
 WIDTH = 1000
@@ -27,6 +30,8 @@ class Player:
 
     def update(self, gravity, colliding):
         # Apply gravity or booster effect
+        if self.dead:
+            return
         if self.booster:
             self.y_velocity -= gravity
         else:
@@ -47,6 +52,8 @@ class Player:
 
     def draw(self):
         play = pygame.rect.Rect((120, self.y + 10), (25, 60))
+        if self.dead:
+            return None
         if self.y < INIT_Y:
             if self.booster:
                 pygame.draw.ellipse(screen, "red", [100, self.y + 50, 20, 30])
@@ -88,12 +95,11 @@ class Laser:
         self.new_laser = True
 
     def generate_laser(self):
-        # Generate a vertical laser with a random x-position and a random height
         offset = random.randint(10, 300)
         laser_x = WIDTH + offset  # The laser starts off-screen to the right
         laser_height = random.randint(100, 300)
         laser_y_top = random.randint(
-            100, HEIGHT - laser_height - 100
+            30, HEIGHT - laser_height - 30
         )  # Random y position, ensuring it fits within screen
         new_lase = [
             [laser_x, laser_y_top],
@@ -106,17 +112,18 @@ class Laser:
             self.generate_laser()
             self.new_laser = False
 
-        # Move lasers and remove off-screen ones
+        # Move lasers and remove off-screen lasers
         for lase in self.lasers:
             lase[0][0] -= game_speed
             lase[1][0] -= game_speed
         self.lasers = [lase for lase in self.lasers if lase[1][0] > 0]
 
-        if len(self.lasers) == 0 or self.lasers[-1][1][0] < WIDTH - 400:
+        if len(self.lasers) == 0 or self.lasers[-1][0][0] < WIDTH - 400:
             self.new_laser = True
 
     def draw(self):
         for lase in self.lasers:
+            # Draw vertical lasers
             pygame.draw.line(
                 screen, "yellow", (lase[0][0], lase[0][1]), (lase[1][0], lase[1][1]), 10
             )
@@ -125,9 +132,9 @@ class Laser:
 
     def check_collision(self, player_rect):
         for lase in self.lasers:
-            # Create a bounding box for the laser line
+            # Create a bounding box for the vertical laser line
             laser_rect = pygame.Rect(
-                lase[0][0], lase[0][1] - 5, lase[1][0] - lase[0][0], 10
+                lase[0][0] - 5, lase[0][1], 10, lase[1][1] - lase[0][1]
             )
             if player_rect.colliderect(laser_rect):
                 return True  # Collision detected
@@ -135,13 +142,14 @@ class Laser:
 
 
 class Rocket:
-    def __init__(self):
+    def __init__(self, player):
         self.counter = 0
         self.active = False
         self.delay = 0
         self.coords = [WIDTH, HEIGHT / 2]
+        self.player = player  # Each rocket is tied to a player
 
-    def update(self, game_speed, player_y):
+    def update(self, game_speed):
         if not self.active:
             self.counter += 1
         if self.counter > 180:
@@ -152,7 +160,7 @@ class Rocket:
 
         if self.active:
             if self.delay < 90:
-                if self.coords[1] > player_y + 10:
+                if self.coords[1] > self.player.y + 10:
                     self.coords[1] -= 3
                 else:
                     self.coords[1] += 3
@@ -229,65 +237,125 @@ class UI:
 
 
 class Game:
-    def __init__(self):
+    def __init__(self, population_size=10):
         self.game_speed = 3
-        self.player = Player()
+        self.population = Population(
+            size=population_size,
+            creature_args={
+                "input_size": 8,  # y pos, velocity, laser1 up/down, laser2 up/down, missile up
+                "output_size": 2,  # Boost or not
+                "hidden_size": 64,
+            },
+        )
+        self.population.load("population.pth")
+        self.players = [Player() for _ in range(population_size)]
         self.laser = Laser()
-        self.rocket = Rocket()
+        self.rockets = [
+            Rocket(self.players[i]) for i in range(population_size)
+        ]  # One rocket per player
+        self.distance = 0
         self.ui = UI()
-        self.pause = False
-        self.restart_cmd = False
-        self.lines = [0, WIDTH / 4, 2 * WIDTH / 4, 3 * WIDTH / 4]
-        self.bg_color = (128, 128, 128)
-        self.new_bg = 0
 
-    def handle_input(self):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+    def run(self):
+        running = True
+        self.ui.load_player_info()
+        while running:
+            timer.tick(FPS)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            # Update game objects
+            self.update()
+
+            # Draw everything
+            self.draw()
+
+            # Check if all players are dead
+            if all(player.dead for player in self.players):
                 self.ui.save_player_info()
-                return False
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    self.pause = not self.pause
-                if event.key == pygame.K_SPACE and not self.pause:
-                    self.player.booster = True
-            if event.type == pygame.KEYUP:
-                if event.key == pygame.K_SPACE:
-                    self.player.booster = False
-        return True
+                self.end_generation()
 
     def update(self):
-        if not self.pause:
-            self.ui.update(self.game_speed)
-            self.player.update(GRAVITY, (False, False))
-            self.laser.update(self.game_speed)
-            self.rocket.update(self.game_speed, self.player.y)
+        self.distance += self.game_speed
+        self.laser.update(self.game_speed)
+        self.ui.update(self.game_speed)
+        for i, player in enumerate(self.players):
+            if not player.dead:
+                state = self.get_state(player)
+                action = self.population.creatures[i].act(state)
+                player.booster = action == 1
+                player.update(GRAVITY, (False, False))
+
+                self.rockets[i].update(self.game_speed)
+
+                # Check for collisions
+                player_rect = player.draw()
+                if self.laser.check_collision(player_rect) or self.rockets[
+                    i
+                ].check_collision(player_rect):
+                    player.dead = True
+                    self.population.creatures[i].set_fitness(self.distance)
 
     def draw(self):
         screen.fill("black")
-        self.laser.draw()
-        self.rocket.draw()
-
-        # Check for collisions with lasers and rocket
-        player_rect = self.player.draw()
-        if self.laser.check_collision(player_rect) or self.rocket.check_collision(
-            player_rect
-        ):
-            self.player.dead = True  # Player dies on collision
-            self.running = False
+        # draw distance and high score
         self.ui.draw()
+        self.laser.draw()
+        for i, player in enumerate(self.players):
+            if not player.dead:
+                player.draw()
+                self.rockets[i].draw()
         pygame.display.flip()
 
-    def run(self):
-        self.running = True
-        while self.running:
-            self.running = self.handle_input()
-            self.update()
-            self.draw()
-            timer.tick(FPS)
+    def get_state(self, player):
+        # Get the closest lasers and missile position relative to the player
+        if self.laser.lasers:
+            lasers = sorted(self.laser.lasers, key=lambda x: x[0][0])
+            lasers = list(filter(lambda x: x[0][0] >= 100, lasers))
+            if len(lasers) > 1:
+                laser1, laser2 = lasers[:2]
+            else:
+                laser1 = laser2 = lasers[0]
+        else:
+            laser1 = [[WIDTH, 0], [WIDTH, HEIGHT]]
+            laser2 = laser1
+
+        missile_up = (
+            self.rockets[self.players.index(player)].coords[1]
+            if self.rockets[self.players.index(player)].active
+            else HEIGHT / 2
+        )
+
+        return torch.tensor(
+            [
+                player.y,
+                player.y_velocity,
+                self.game_speed,
+                laser1[0][1],  # closest laser up y
+                laser1[1][1],  # closest laser down y
+                laser2[0][1],  # second closest laser up y
+                laser2[1][1],  # second closest laser down y
+                missile_up,
+            ],
+            dtype=torch.float32,
+        )
+
+    def end_generation(self):
+        # Evolve the population based on fitness
+        self.population.evolve()
+        self.population.save("population.pth")
+        # Reset for the next generation
+        self.distance = 0
+        self.players = [Player() for _ in range(len(self.players))]
+        self.laser = Laser()
+        self.rockets = [Rocket(self.players[i]) for i in range(len(self.players))]
+        self.ui.load_player_info()
+        self.ui.distance = 0
+        self.game_speed = 3
 
 
 if __name__ == "__main__":
-    game = Game()
+    game = Game(population_size=100)
     game.run()
     pygame.quit()
