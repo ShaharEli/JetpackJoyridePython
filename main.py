@@ -1,300 +1,298 @@
-# Remaking Jetpack Joyride in Python!
-
 import random
 import pygame
 
-pygame.init()
-
+# Constants
 WIDTH = 1000
 HEIGHT = 600
+FPS = 60
+INIT_Y = HEIGHT - 130
+GRAVITY = 0.4
+
+# Initialize pygame
+pygame.init()
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
 surface = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
 pygame.display.set_caption("Jetpack Joyride Remake in Python!")
-fps = 60
-timer = pygame.time.Clock()
 font = pygame.font.Font("freesansbold.ttf", 32)
-bg_color = (128, 128, 128)
-lines = [0, WIDTH / 4, 2 * WIDTH / 4, 3 * WIDTH / 4]
-game_speed = 3
-pause = False
-init_y = HEIGHT - 130
-player_y = init_y
-booster = False
-counter = 0
-y_velocity = 0
-gravity = 0.4
-new_laser = True
-laser = []
-distance = 0
-restart_cmd = False
-new_bg = 0
-
-# rocket variables
-rocket_counter = 0
-rocket_active = False
-rocket_delay = 0
-rocket_coords = []
-
-# load in player info in beginning
-file = open("player_info.txt", "r")
-read = file.readlines()
-high_score = int(read[0])
-lifetime = int(read[1])
-file.close()
+timer = pygame.time.Clock()
 
 
-# all the code to move lines across screen and draw bg images
-def draw_screen(line_list, lase):
-    screen.fill("black")
-    pygame.draw.rect(
-        surface, (bg_color[0], bg_color[1], bg_color[2], 50), [0, 0, WIDTH, HEIGHT]
-    )
-    screen.blit(surface, (0, 0))
-    top = pygame.draw.rect(screen, "gray", [0, 0, WIDTH, 50])
-    bot = pygame.draw.rect(screen, "gray", [0, HEIGHT - 50, WIDTH, 50])
-    for i in range(len(line_list)):
-        pygame.draw.line(screen, "black", (line_list[i], 0), (line_list[i], 50), 3)
-        pygame.draw.line(
-            screen, "black", (line_list[i], HEIGHT - 50), (line_list[i], HEIGHT), 3
-        )
-        if not pause:
-            line_list[i] -= game_speed
+class Player:
+    def __init__(self):
+        self.y = INIT_Y
+        self.booster = False
+        self.y_velocity = 0
+        self.counter = 0
+        self.dead = False
+
+    def update(self, gravity, colliding):
+        # Apply gravity or booster effect
+        if self.booster:
+            self.y_velocity -= gravity
+        else:
+            self.y_velocity += gravity
+
+        # Prevent the player from moving out of bounds
+        if self.y + self.y_velocity > INIT_Y:  # Prevent passing the floor
+            self.y = INIT_Y
+            self.y_velocity = 0
+        elif self.y + self.y_velocity < 0:  # Prevent passing the ceiling
+            self.y = 0
+            self.y_velocity = 0
+        else:
+            self.y += self.y_velocity
+
+        # Update counter for animation purposes
+        self.counter = (self.counter + 1) % 40
+
+    def draw(self):
+        play = pygame.rect.Rect((120, self.y + 10), (25, 60))
+        if self.y < INIT_Y:
+            if self.booster:
+                pygame.draw.ellipse(screen, "red", [100, self.y + 50, 20, 30])
+                pygame.draw.ellipse(screen, "orange", [105, self.y + 50, 10, 30])
+                pygame.draw.ellipse(screen, "yellow", [110, self.y + 50, 5, 30])
+            pygame.draw.rect(screen, "yellow", [128, self.y + 60, 10, 20], 0, 3)
+            pygame.draw.rect(screen, "orange", [130, self.y + 60, 10, 20], 0, 3)
+        else:
+            if self.counter < 10:
+                pygame.draw.line(
+                    screen, "yellow", (128, self.y + 60), (140, self.y + 80), 10
+                )
+                pygame.draw.line(
+                    screen, "orange", (130, self.y + 60), (120, self.y + 80), 10
+                )
+            elif 10 <= self.counter < 20:
+                pygame.draw.rect(screen, "yellow", [128, self.y + 60, 10, 20], 0, 3)
+                pygame.draw.rect(screen, "orange", [130, self.y + 60, 10, 20], 0, 3)
+            elif 20 <= self.counter < 30:
+                pygame.draw.line(
+                    screen, "yellow", (128, self.y + 60), (120, self.y + 80), 10
+                )
+                pygame.draw.line(
+                    screen, "orange", (130, self.y + 60), (140, self.y + 80), 10
+                )
+            else:
+                pygame.draw.rect(screen, "yellow", [128, self.y + 60, 10, 20], 0, 3)
+                pygame.draw.rect(screen, "orange", [130, self.y + 60, 10, 20], 0, 3)
+        pygame.draw.rect(screen, "white", [100, self.y + 20, 20, 30], 0, 5)
+        pygame.draw.ellipse(screen, "orange", [120, self.y + 20, 30, 50])
+        pygame.draw.circle(screen, "orange", (135, self.y + 15), 10)
+        pygame.draw.circle(screen, "black", (138, self.y + 12), 3)
+        return play
+
+
+class Laser:
+    def __init__(self):
+        self.lasers = []
+        self.new_laser = True
+
+    def generate_laser(self):
+        laser_type = random.randint(0, 1)
+        offset = random.randint(10, 300)
+        if laser_type == 0:
+            laser_width = random.randint(100, 300)
+            laser_y = random.randint(100, HEIGHT - 100)
+            new_lase = [
+                [WIDTH + offset, laser_y],
+                [WIDTH + offset + laser_width, laser_y],
+            ]
+        else:
+            laser_height = random.randint(100, 300)
+            laser_y = random.randint(100, HEIGHT - 400)
+            new_lase = [
+                [WIDTH + offset, laser_y],
+                [WIDTH + offset, laser_y + laser_height],
+            ]
+        self.lasers.append(new_lase)
+
+    def update(self, game_speed):
+        if self.new_laser:
+            self.generate_laser()
+            self.new_laser = False
+
+        # Move lasers and remove off-screen ones
+        for lase in self.lasers:
             lase[0][0] -= game_speed
             lase[1][0] -= game_speed
-        if line_list[i] < 0:
-            line_list[i] = WIDTH
-    lase_line = pygame.draw.line(
-        screen, "yellow", (lase[0][0], lase[0][1]), (lase[1][0], lase[1][1]), 10
-    )
-    pygame.draw.circle(screen, "yellow", (lase[0][0], lase[0][1]), 12)
-    pygame.draw.circle(screen, "yellow", (lase[1][0], lase[1][1]), 12)
-    screen.blit(font.render(f"Distance: {int(distance)} m", True, "white"), (10, 10))
-    screen.blit(
-        font.render(f"High Score: {int(high_score)} m", True, "white"), (10, 70)
-    )
-    return line_list, top, bot, lase, lase_line
+        self.lasers = [lase for lase in self.lasers if lase[1][0] > 0]
 
+        if len(self.lasers) == 0 or self.lasers[-1][1][0] < WIDTH - 400:
+            self.new_laser = True
 
-# draw player including animated states
-def draw_player():
-    play = pygame.rect.Rect((120, player_y + 10), (25, 60))
-    # pygame.draw.rect(screen, 'green', play, 5)
-    if player_y < init_y or pause:
-        if booster:
-            pygame.draw.ellipse(screen, "red", [100, player_y + 50, 20, 30])
-            pygame.draw.ellipse(screen, "orange", [105, player_y + 50, 10, 30])
-            pygame.draw.ellipse(screen, "yellow", [110, player_y + 50, 5, 30])
-        pygame.draw.rect(screen, "yellow", [128, player_y + 60, 10, 20], 0, 3)
-        pygame.draw.rect(screen, "orange", [130, player_y + 60, 10, 20], 0, 3)
-    else:
-        if counter < 10:
+    def draw(self):
+        for lase in self.lasers:
             pygame.draw.line(
-                screen, "yellow", (128, player_y + 60), (140, player_y + 80), 10
+                screen, "yellow", (lase[0][0], lase[0][1]), (lase[1][0], lase[1][1]), 10
             )
-            pygame.draw.line(
-                screen, "orange", (130, player_y + 60), (120, player_y + 80), 10
+            pygame.draw.circle(screen, "yellow", (lase[0][0], lase[0][1]), 12)
+            pygame.draw.circle(screen, "yellow", (lase[1][0], lase[1][1]), 12)
+
+    def check_collision(self, player_rect):
+        for lase in self.lasers:
+            # Create a bounding box for the laser line
+            laser_rect = pygame.Rect(
+                lase[0][0], lase[0][1] - 5, lase[1][0] - lase[0][0], 10
             )
-        elif 10 <= counter < 20:
-            pygame.draw.rect(screen, "yellow", [128, player_y + 60, 10, 20], 0, 3)
-            pygame.draw.rect(screen, "orange", [130, player_y + 60, 10, 20], 0, 3)
-        elif 20 <= counter < 30:
-            pygame.draw.line(
-                screen, "yellow", (128, player_y + 60), (120, player_y + 80), 10
-            )
-            pygame.draw.line(
-                screen, "orange", (130, player_y + 60), (140, player_y + 80), 10
-            )
-        else:
-            pygame.draw.rect(screen, "yellow", [128, player_y + 60, 10, 20], 0, 3)
-            pygame.draw.rect(screen, "orange", [130, player_y + 60, 10, 20], 0, 3)
-    # jetpack, body and head
-    pygame.draw.rect(screen, "white", [100, player_y + 20, 20, 30], 0, 5)
-    pygame.draw.ellipse(screen, "orange", [120, player_y + 20, 30, 50])
-    pygame.draw.circle(screen, "orange", (135, player_y + 15), 10)
-    pygame.draw.circle(screen, "black", (138, player_y + 12), 3)
-    return play
+            if player_rect.colliderect(laser_rect):
+                return True  # Collision detected
+        return False
 
 
-def check_colliding():
-    coll = [False, False]
-    rstrt = False
-    if player.colliderect(bot_plat):
-        coll[0] = True
-    elif player.colliderect(top_plat):
-        coll[1] = True
-    if laser_line.colliderect(player):
-        rstrt = True
-    if rocket_active:
-        if rocket.colliderect(player):
-            rstrt = True
-    return coll, rstrt
+class Rocket:
+    def __init__(self):
+        self.counter = 0
+        self.active = False
+        self.delay = 0
+        self.coords = [WIDTH, HEIGHT / 2]
 
+    def update(self, game_speed, player_y):
+        if not self.active:
+            self.counter += 1
+        if self.counter > 180:
+            self.counter = 0
+            self.active = True
+            self.delay = 0
+            self.coords = [WIDTH, HEIGHT / 2]
 
-def generate_laser():
-    # 0 - horiz, 1 - vert
-    laser_type = random.randint(0, 1)
-    offset = random.randint(10, 300)
-    if laser_type == 0:
-        laser_width = random.randint(100, 300)
-        laser_y = random.randint(100, HEIGHT - 100)
-        new_lase = [[WIDTH + offset, laser_y], [WIDTH + offset + laser_width, laser_y]]
-    elif laser_type == 1:
-        laser_height = random.randint(100, 300)
-        laser_y = random.randint(100, HEIGHT - 400)
-        new_lase = [[WIDTH + offset, laser_y], [WIDTH + offset, laser_y + laser_height]]
-    return new_lase
-
-
-def draw_rocket(coords, mode):
-    if mode == 0:
-        rock = pygame.draw.rect(
-            screen, "dark red", [coords[0] - 60, coords[1] - 25, 50, 50], 0, 5
-        )
-        screen.blit(font.render("!", True, "black"), (coords[0] - 40, coords[1] - 20))
-        if not pause:
-            if coords[1] > player_y + 10:
-                coords[1] -= 3
-            else:
-                coords[1] += 3
-    else:
-        rock = pygame.draw.rect(
-            screen, "red", [coords[0], coords[1] - 10, 50, 20], 0, 5
-        )
-        pygame.draw.ellipse(
-            screen, "orange", [coords[0] + 50, coords[1] - 10, 50, 20], 7
-        )
-        if not pause:
-            coords[0] -= 10 + game_speed
-
-    return coords, rock
-
-
-def draw_pause():
-    pygame.draw.rect(surface, (128, 128, 128, 150), [0, 0, WIDTH, HEIGHT])
-    pygame.draw.rect(surface, "dark gray", [200, 150, 600, 50], 0, 10)
-    surface.blit(
-        font.render("Game Paused. Escape Btn Resumes", True, "black"), (220, 160)
-    )
-    restart_btn = pygame.draw.rect(surface, "white", [200, 220, 280, 50], 0, 10)
-    surface.blit(font.render("Restart", True, "black"), (220, 230))
-    quit_btn = pygame.draw.rect(surface, "white", [520, 220, 280, 50], 0, 10)
-    surface.blit(font.render("Quit", True, "black"), (540, 230))
-    pygame.draw.rect(surface, "dark gray", [200, 300, 600, 50], 0, 10)
-    surface.blit(
-        font.render(f"Lifetime Distance Ran: {int(lifetime)}", True, "black"),
-        (220, 310),
-    )
-    screen.blit(surface, (0, 0))
-    return restart_btn, quit_btn
-
-
-def modify_player_info():
-    global high_score, lifetime
-    if distance > high_score:
-        high_score = distance
-    lifetime += distance
-    file = open("player_info.txt", "w")
-    file.write(str(int(high_score)) + "\n")
-    file.write(str(int(lifetime)))
-    file.close()
-
-
-run = True
-while run:
-    timer.tick(fps)
-    if counter < 40:
-        counter += 1
-    else:
-        counter = 0
-    if new_laser:
-        laser = generate_laser()
-        new_laser = False
-    lines, top_plat, bot_plat, laser, laser_line = draw_screen(lines, laser)
-    if pause:
-        restart, quits = draw_pause()
-
-    if not rocket_active and not pause:
-        rocket_counter += 1
-    if rocket_counter > 180:
-        rocket_counter = 0
-        rocket_active = True
-        rocket_delay = 0
-        rocket_coords = [WIDTH, HEIGHT / 2]
-    if rocket_active:
-        if rocket_delay < 90:
-            if not pause:
-                rocket_delay += 1
-            rocket_coords, rocket = draw_rocket(rocket_coords, 0)
-        else:
-            rocket_coords, rocket = draw_rocket(rocket_coords, 1)
-        if rocket_coords[0] < -50:
-            rocket_active = False
-
-    player = draw_player()
-    colliding, restart_cmd = check_colliding()
-
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            modify_player_info()
-            run = False
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                if pause:
-                    pause = False
+        if self.active:
+            if self.delay < 90:
+                if self.coords[1] > player_y + 10:
+                    self.coords[1] -= 3
                 else:
-                    pause = True
-            if event.key == pygame.K_SPACE and not pause:
-                booster = True
-        if event.type == pygame.KEYUP:
-            if event.key == pygame.K_SPACE:
-                booster = False
-        if event.type == pygame.MOUSEBUTTONDOWN and pause:
-            if restart.collidepoint(event.pos):
-                restart_cmd = True
-            if quits.collidepoint(event.pos):
-                modify_player_info()
-                run = False
+                    self.coords[1] += 3
+                self.delay += 1
+            else:
+                self.coords[0] -= 10 + game_speed
+            if self.coords[0] < -50:
+                self.active = False
 
-    if not pause:
-        distance += game_speed
-        if booster:
-            y_velocity -= gravity
-        else:
-            y_velocity += gravity
-        if (colliding[0] and y_velocity > 0) or (colliding[1] and y_velocity < 0):
-            y_velocity = 0
-        player_y += y_velocity
+    def draw(self):
+        if self.active:
+            if self.delay < 90:
+                pygame.draw.rect(
+                    screen,
+                    "dark red",
+                    [self.coords[0] - 60, self.coords[1] - 25, 50, 50],
+                    0,
+                    5,
+                )
+                screen.blit(
+                    font.render("!", True, "black"),
+                    (self.coords[0] - 40, self.coords[1] - 20),
+                )
+            else:
+                pygame.draw.rect(
+                    screen, "red", [self.coords[0], self.coords[1] - 10, 50, 20], 0, 5
+                )
+                pygame.draw.ellipse(
+                    screen,
+                    "orange",
+                    [self.coords[0] + 50, self.coords[1] - 10, 50, 20],
+                    7,
+                )
 
-    # progressive speed increases
-    if distance < 50000:
-        game_speed = 1 + (distance // 500) / 10
-    else:
-        game_speed = 11
+    def check_collision(self, player_rect):
+        if self.active:
+            # Create a bounding box for the rocket
+            rocket_rect = pygame.Rect(self.coords[0] - 60, self.coords[1] - 25, 50, 50)
+            if player_rect.colliderect(rocket_rect):
+                return True  # Collision detected
+        return False
 
-    if laser[0][0] < 0 and laser[1][0] < 0:
-        new_laser = True
 
-    if distance - new_bg > 500:
-        new_bg = distance
-        bg_color = (
-            random.randint(0, 255),
-            random.randint(0, 255),
-            random.randint(0, 255),
+class UI:
+    def __init__(self):
+        self.distance = 0
+        self.high_score, self.lifetime = self.load_player_info()
+
+    def load_player_info(self):
+        with open("player_info.txt", "r") as file:
+            read = file.readlines()
+            high_score = int(read[0])
+            lifetime = int(read[1])
+        return high_score, lifetime
+
+    def save_player_info(self):
+        with open("player_info.txt", "w") as file:
+            file.write(f"{int(self.high_score)}\n")
+            file.write(f"{int(self.lifetime)}")
+
+    def update(self, game_speed):
+        self.distance += game_speed
+        if self.distance > self.high_score:
+            self.high_score = self.distance
+
+    def draw(self):
+        screen.blit(
+            font.render(f"Distance: {int(self.distance)} m", True, "white"), (10, 10)
+        )
+        screen.blit(
+            font.render(f"High Score: {int(self.high_score)} m", True, "white"),
+            (10, 70),
         )
 
-    if restart_cmd:
-        modify_player_info()
-        distance = 0
-        rocket_active = False
-        rocket_counter = 0
-        pause = False
-        player_y = init_y
-        y_velocity = 0
-        restart_cmd = 0
-        new_laser = True
 
-    if distance > high_score:
-        high_score = int(distance)
+class Game:
+    def __init__(self):
+        self.game_speed = 3
+        self.player = Player()
+        self.laser = Laser()
+        self.rocket = Rocket()
+        self.ui = UI()
+        self.pause = False
+        self.restart_cmd = False
+        self.lines = [0, WIDTH / 4, 2 * WIDTH / 4, 3 * WIDTH / 4]
+        self.bg_color = (128, 128, 128)
+        self.new_bg = 0
 
-    pygame.display.flip()
-pygame.quit()
+    def handle_input(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.ui.save_player_info()
+                return False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    self.pause = not self.pause
+                if event.key == pygame.K_SPACE and not self.pause:
+                    self.player.booster = True
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_SPACE:
+                    self.player.booster = False
+        return True
+
+    def update(self):
+        if not self.pause:
+            self.ui.update(self.game_speed)
+            self.player.update(GRAVITY, (False, False))
+            self.laser.update(self.game_speed)
+            self.rocket.update(self.game_speed, self.player.y)
+
+    def draw(self):
+        screen.fill("black")
+        self.laser.draw()
+        self.rocket.draw()
+
+        # Check for collisions with lasers and rocket
+        player_rect = self.player.draw()
+        if self.laser.check_collision(player_rect) or self.rocket.check_collision(
+            player_rect
+        ):
+            self.player.dead = True  # Player dies on collision
+            self.running = False
+        self.ui.draw()
+        pygame.display.flip()
+
+    def run(self):
+        self.running = True
+        while self.running:
+            self.running = self.handle_input()
+            self.update()
+            self.draw()
+            timer.tick(FPS)
+
+
+if __name__ == "__main__":
+    game = Game()
+    game.run()
+    pygame.quit()
