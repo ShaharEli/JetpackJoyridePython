@@ -64,7 +64,7 @@ class Population:
     def reset(self):
         return
 
-    def evolve(self, elite_size=0.2):
+    def evolve(self, elite_size=0.05):
         # Fitness evaluation
         fitness_scores = [
             self.evaluate_fitness(creature) for creature in self.creatures

@@ -237,8 +237,10 @@ class UI:
 
 
 class Game:
-    def __init__(self, population_size=10):
+    def __init__(self, population_size=10, warm_up_generations_before_rockets=0):
         self.game_speed = 3
+        self.step = 0
+        self.warm_up_generations_before_rockets = warm_up_generations_before_rockets
         self.population = Population(
             size=population_size,
             creature_args={
@@ -275,6 +277,7 @@ class Game:
             if all(player.dead for player in self.players):
                 self.ui.save_player_info()
                 self.end_generation()
+                self.step += 1
 
     def update(self):
         self.distance += self.game_speed
@@ -286,9 +289,8 @@ class Game:
                 action = self.population.creatures[i].act(state)
                 player.booster = action == 1
                 player.update(GRAVITY, (False, False))
-
-                self.rockets[i].update(self.game_speed)
-
+                if self.step > self.warm_up_generations_before_rockets:
+                    self.rockets[i].update(self.game_speed)
                 # Check for collisions
                 player_rect = player.draw()
                 if self.laser.check_collision(player_rect) or self.rockets[
@@ -356,6 +358,6 @@ class Game:
 
 
 if __name__ == "__main__":
-    game = Game(population_size=100)
+    game = Game(population_size=150)
     game.run()
     pygame.quit()
