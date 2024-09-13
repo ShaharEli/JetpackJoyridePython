@@ -143,7 +143,7 @@ class Laser:
         laser_x = WIDTH + offset  # The laser starts off-screen to the right
         laser_height = random.randint(100, 300)
         laser_y_top = random.randint(
-            100, HEIGHT - laser_height - 100
+            30, HEIGHT - laser_height - 30
         )  # Random y position, ensuring it fits within screen
         new_lase = [
             [laser_x, laser_y_top],
@@ -178,7 +178,7 @@ class Laser:
         for lase in self.lasers:
             # Create a bounding box for the laser line
             laser_rect = pygame.Rect(
-                lase[0][0], lase[0][1] - 5, lase[1][0] - lase[0][0], 10
+                lase[0][0] - 5, lase[0][1], 10, lase[1][1] - lase[0][1]
             )
             if player_rect.colliderect(laser_rect):
                 return True  # Collision detected
@@ -223,18 +223,16 @@ class Rocket:
             self.counter = 0
             self.active = True
             self.delay = 0
-            self.coords = [WIDTH, random.randint(50, HEIGHT - 50)]  # Random Y position
+            self.coords = [WIDTH, HEIGHT / 2]
 
         if self.active:
             if self.delay < 90:
-                # Track the player's Y position with some delay
-                if self.coords[1] > player_y + 10:
+                if self.coords[1] > self.player.y + 10:
                     self.coords[1] -= 3
                 else:
                     self.coords[1] += 3
                 self.delay += 1
             else:
-                # Move the rocket horizontally after delay
                 self.coords[0] -= 10 + game_speed
             if self.coords[0] < -50:
                 self.active = False
@@ -253,12 +251,7 @@ class Rocket:
     def check_collision(self, player_rect):
         if self.active:
             # Create a bounding box for the rocket sprite, slightly shrinking it
-            rocket_rect = pygame.Rect(
-                self.coords[0] + 5,
-                self.coords[1] - 20,
-                self.rocket_surface.get_width() - 10,
-                self.rocket_surface.get_height() - 10,
-            )
+            rocket_rect = pygame.Rect(self.coords[0] - 60, self.coords[1] - 25, 50, 50)
             if player_rect.colliderect(rocket_rect):
                 return True  # Collision detected
         return False
@@ -306,9 +299,24 @@ class UI:
             (10, 70),
         )
 
+    def preview(self, generation, best):
+        screen.blit(font.render(f"Generation: {generation}", True, "white"), (10, 10))
+        screen.blit(
+            font.render(f"Best from this generation: {best}", True, "white"),
+            (10, 70),
+        )
+        screen.blit(
+            font.render(f"Distance: {int(self.distance)} m", True, "white"), (10, 130)
+        )
+
 
 class Game:
-    def __init__(self, population_size=10, warm_up_generations_before_rockets=0):
+    def __init__(
+        self,
+        population_size=10,
+        warm_up_generations_before_rockets=0,
+        is_in_preview=False,
+    ):
         self.game_speed = 3
         self.step = 0
         self.warm_up_generations_before_rockets = warm_up_generations_before_rockets
@@ -319,12 +327,17 @@ class Game:
                 "output_size": 2,  # Boost or not
                 "hidden_size": 64,
             },
+            is_in_preview=is_in_preview,
         )
+        self.is_in_preview = is_in_preview
         self.population.load("population.pth")
-        self.players = [Player() for _ in range(population_size)]
+        self.players = [
+            Player() for _ in range(population_size if not is_in_preview else 1)
+        ]
         self.laser = Laser()
         self.rockets = [
-            Rocket(self.players[i]) for i in range(population_size)
+            Rocket(self.players[i])
+            for i in range(population_size if not is_in_preview else 1)
         ]  # One rocket per player
         self.distance = 0
         self.ui = UI()
@@ -348,6 +361,8 @@ class Game:
             if all(player.dead for player in self.players):
                 self.ui.save_player_info()
                 self.end_generation()
+                if self.is_in_preview and self.population.preview_done():
+                    running = False
                 self.step += 1
 
     def update(self):
@@ -380,8 +395,13 @@ class Game:
             if not player.dead:
                 player.draw()
                 self.rockets[i].draw()
-
-        self.ui.draw_score()
+        if self.is_in_preview:
+            self.ui.preview(
+                self.population.get_preview_generation(),
+                self.population.get_preview_generation_best(),
+            )
+        else:
+            self.ui.draw_score()
         pygame.display.flip()
 
     def get_state(self, player):
@@ -425,8 +445,11 @@ class Game:
 
     def end_generation(self):
         # Evolve the population based on fitness
-        self.population.evolve()
-        self.population.save("population.pth")
+        if self.is_in_preview:
+            self.population.fetch_next_creature()
+        else:
+            self.population.evolve()
+            self.population.save("population.pth")
         # Reset for the next generation
         self.distance = 0
         self.players = [Player() for _ in range(len(self.players))]
@@ -438,6 +461,6 @@ class Game:
 
 
 if __name__ == "__main__":
-    game = Game(population_size=150)
+    game = Game(population_size=150, is_in_preview=True)
     game.run()
     pygame.quit()

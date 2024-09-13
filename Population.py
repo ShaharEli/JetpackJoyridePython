@@ -47,13 +47,19 @@ class Creature(nn.Module):
 
 
 class Population:
-    def __init__(self, size, creature_args):
+    def __init__(self, size, creature_args, is_in_preview=False, preview_step_size=75):
         self.creature_args = creature_args
         self.creatures = [Creature(**creature_args) for _ in range(size)]
         self.best_creatures = []
         self.best_fitness = []
         self.mutate_rate = 0.1
         self.mutate_decay = 0.999
+        self.is_in_preview = is_in_preview
+        self.preview_creature = Creature(**creature_args)
+        self.preview_idx = 1
+        self.preview_step_size = preview_step_size
+        if is_in_preview:
+            self.creatures = [self.preview_creature]
 
     def get_creatures(self):
         return self.creatures
@@ -124,7 +130,27 @@ class Population:
         # Placeholder: Implement the actual interaction with the environment
         return creature.fitness  # Random fitness for placeholder
 
+    def preview_done(self):
+        return self.preview_idx >= len(self.best_fitness)
+
+    def fetch_next_creature(self):
+        if self.preview_done():
+            return None
+        self.preview_creature.load_state_dict(
+            self.best_creatures[self.preview_idx].state_dict()
+        )
+        self.preview_idx += self.preview_step_size
+        return self.preview_creature
+
+    def get_preview_generation_best(self):
+        return self.best_fitness[self.preview_idx - 1]
+
+    def get_preview_generation(self):
+        return self.preview_idx
+
     def save(self, filename):
+        if self.is_in_preview:
+            return
         torch.save(
             {
                 "creatures": [creature.state_dict() for creature in self.creatures],
