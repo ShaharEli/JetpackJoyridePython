@@ -315,7 +315,7 @@ class Game:
         self.population = Population(
             size=population_size,
             creature_args={
-                "input_size": 8,  # y pos, velocity, laser1 up/down, laser2 up/down, missile up
+                "input_size": 9,  # y pos, velocity, laser1 up/down, laser2 up/down, missile up
                 "output_size": 2,  # Boost or not
                 "hidden_size": 64,
             },
@@ -400,9 +400,14 @@ class Game:
         missile_up = (
             self.rockets[self.players.index(player)].coords[1]
             if self.rockets[self.players.index(player)].active
-            else HEIGHT / 2
+            else HEIGHT * 2
         )
 
+        missile_horizontal = (
+            self.rockets[self.players.index(player)].coords[0]
+            if self.rockets[self.players.index(player)].active
+            else WIDTH * 2
+        )
         return torch.tensor(
             [
                 player.y,
@@ -413,6 +418,7 @@ class Game:
                 laser2[0][1],  # second closest laser up y
                 laser2[1][1],  # second closest laser down y
                 missile_up,
+                missile_horizontal,
             ],
             dtype=torch.float32,
         )
