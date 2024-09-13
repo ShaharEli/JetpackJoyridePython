@@ -28,6 +28,42 @@ class Player:
         self.counter = 0
         self.dead = False
 
+        # Load player sprites
+        self.player_fly_surface = pygame.image.load(
+            "assets/sprites/skins/PlayerFly_" + "Blue" + ".png"
+        ).convert_alpha()
+        self.player_fly_surface = pygame.transform.scale(
+            self.player_fly_surface, [64, 68]
+        )
+
+        self.player_dead_surface = pygame.image.load(
+            "assets/sprites/skins/PlayerDead_" + "Blue" + ".png"
+        ).convert_alpha()
+        self.player_dead_surface = pygame.transform.scale(
+            self.player_dead_surface, [82, 74]
+        )
+
+        self.player_surface = self.player_fly_surface  # Default player sprite
+        self.player_rect = self.player_surface.get_rect(center=(120, INIT_Y))
+        self.collision_rect = pygame.Rect(
+            self.player_rect.x + 10, self.player_rect.y + 10, 44, 58
+        )  # Adjust to make it slightly smaller than the visible sprite
+
+        # Fly particle sprite
+        self.fly_particle_surface = pygame.image.load(
+            "assets/sprites/Bullet.png"
+        ).convert_alpha()
+        self.fly_particle_surface = pygame.transform.smoothscale(
+            self.fly_particle_surface,
+            (
+                int(self.fly_particle_surface.get_width() * 2.2),
+                int(self.fly_particle_surface.get_height() * 2.2),
+            ),
+        )
+
+    def get_collision_rect(self):
+        return self.collision_rect  # Return the smaller collision rectangle
+
     def update(self, gravity, colliding):
         # Apply gravity or booster effect
         if self.dead:
@@ -38,68 +74,76 @@ class Player:
             self.y_velocity += gravity
 
         # Prevent the player from moving out of bounds
-        if self.y + self.y_velocity > INIT_Y:  # Prevent passing the floor
+        if self.y + self.y_velocity > INIT_Y:
             self.y = INIT_Y
             self.y_velocity = 0
-        elif self.y + self.y_velocity < 0:  # Prevent passing the ceiling
+        elif self.y + self.y_velocity < 0:
             self.y = 0
             self.y_velocity = 0
         else:
             self.y += self.y_velocity
 
-        # Update counter for animation purposes
+        # Update player rectangle for proper position and animation
         self.counter = (self.counter + 1) % 40
+        self.player_rect = self.player_surface.get_rect(center=(120, self.y + 25))
+
+        # Adjust the player collision rectangle to be smaller and more accurate
+        self.player_rect = pygame.Rect(
+            self.player_rect.x + 10, self.player_rect.y + 25, 44, 58
+        )  # Manually shrink the collision box to fit the visible part of the player
+        self.collision_rect = pygame.Rect(
+            self.player_rect.x + 10, self.player_rect.y + 15, 44, 50  # Tuned dimensions
+        )
 
     def draw(self):
-        play = pygame.rect.Rect((120, self.y + 10), (25, 60))
-        if self.dead:
-            return None
-        if self.y < INIT_Y:
-            if self.booster:
-                pygame.draw.ellipse(screen, "red", [100, self.y + 50, 20, 30])
-                pygame.draw.ellipse(screen, "orange", [105, self.y + 50, 10, 30])
-                pygame.draw.ellipse(screen, "yellow", [110, self.y + 50, 5, 30])
-            pygame.draw.rect(screen, "yellow", [128, self.y + 60, 10, 20], 0, 3)
-            pygame.draw.rect(screen, "orange", [130, self.y + 60, 10, 20], 0, 3)
-        else:
-            if self.counter < 10:
-                pygame.draw.line(
-                    screen, "yellow", (128, self.y + 60), (140, self.y + 80), 10
+        # Draw the player and booster particles
+        play = screen.blit(self.player_surface, self.player_rect)
+        if self.booster:
+            for _ in range(4):
+                x = random.randint(0, 10)
+                y = random.randint(0, 10)
+                screen.blit(
+                    self.fly_particle_surface,
+                    (self.player_rect.x - 10 + x, self.player_rect.y + 40 + y),
                 )
-                pygame.draw.line(
-                    screen, "orange", (130, self.y + 60), (120, self.y + 80), 10
-                )
-            elif 10 <= self.counter < 20:
-                pygame.draw.rect(screen, "yellow", [128, self.y + 60, 10, 20], 0, 3)
-                pygame.draw.rect(screen, "orange", [130, self.y + 60, 10, 20], 0, 3)
-            elif 20 <= self.counter < 30:
-                pygame.draw.line(
-                    screen, "yellow", (128, self.y + 60), (120, self.y + 80), 10
-                )
-                pygame.draw.line(
-                    screen, "orange", (130, self.y + 60), (140, self.y + 80), 10
-                )
-            else:
-                pygame.draw.rect(screen, "yellow", [128, self.y + 60, 10, 20], 0, 3)
-                pygame.draw.rect(screen, "orange", [130, self.y + 60, 10, 20], 0, 3)
-        pygame.draw.rect(screen, "white", [100, self.y + 20, 20, 30], 0, 5)
-        pygame.draw.ellipse(screen, "orange", [120, self.y + 20, 30, 50])
-        pygame.draw.circle(screen, "orange", (135, self.y + 15), 10)
-        pygame.draw.circle(screen, "black", (138, self.y + 12), 3)
         return play
+
+    def get_collision_rect(self):
+        return self.collision_rect  # Use this for collision detection
 
 
 class Laser:
     def __init__(self):
         self.lasers = []
         self.new_laser = True
+        # Load and scale the laser sprite
+        self.laser_surface = pygame.image.load(
+            "assets/sprites/Zapper1.png"
+        ).convert_alpha()
+        self.laser_surface = pygame.transform.scale2x(self.laser_surface)
+
+        self.laser_surface2 = pygame.image.load(
+            "assets/sprites/Zapper2.png"
+        ).convert_alpha()
+        self.laser_surface2 = pygame.transform.scale2x(self.laser_surface2)
+
+        self.laser_surface3 = pygame.image.load(
+            "assets/sprites/Zapper3.png"
+        ).convert_alpha()
+        self.laser_surface3 = pygame.transform.scale2x(self.laser_surface3)
+
+        self.laser_surface4 = pygame.image.load(
+            "assets/sprites/Zapper4.png"
+        ).convert_alpha()
+        self.laser_surface4 = pygame.transform.scale2x(self.laser_surface4)
 
     def generate_laser(self):
+        # Generate a vertical laser with a random x-position and a random height
         offset = random.randint(10, 300)
         laser_x = WIDTH + offset  # The laser starts off-screen to the right
         laser_height = random.randint(100, 300)
         laser_y_top = random.randint(
-            30, HEIGHT - laser_height - 30
+            100, HEIGHT - laser_height - 100
         )  # Random y position, ensuring it fits within screen
         new_lase = [
             [laser_x, laser_y_top],
@@ -112,29 +156,29 @@ class Laser:
             self.generate_laser()
             self.new_laser = False
 
-        # Move lasers and remove off-screen lasers
+        # Move lasers and remove off-screen ones
         for lase in self.lasers:
             lase[0][0] -= game_speed
             lase[1][0] -= game_speed
         self.lasers = [lase for lase in self.lasers if lase[1][0] > 0]
 
-        if len(self.lasers) == 0 or self.lasers[-1][0][0] < WIDTH - 400:
+        if len(self.lasers) == 0 or self.lasers[-1][1][0] < WIDTH - 400:
             self.new_laser = True
 
     def draw(self):
+        # Draw each laser sprite at its corresponding coordinates
         for lase in self.lasers:
-            # Draw vertical lasers
-            pygame.draw.line(
-                screen, "yellow", (lase[0][0], lase[0][1]), (lase[1][0], lase[1][1]), 10
-            )
-            pygame.draw.circle(screen, "yellow", (lase[0][0], lase[0][1]), 12)
-            pygame.draw.circle(screen, "yellow", (lase[1][0], lase[1][1]), 12)
+
+            if random.randint(0, 1) == 0:
+                screen.blit(self.laser_surface, lase)
+            else:
+                screen.blit(self.laser_surface2, lase)
 
     def check_collision(self, player_rect):
         for lase in self.lasers:
-            # Create a bounding box for the vertical laser line
+            # Create a bounding box for the laser line
             laser_rect = pygame.Rect(
-                lase[0][0] - 5, lase[0][1], 10, lase[1][1] - lase[0][1]
+                lase[0][0], lase[0][1] - 5, lase[1][0] - lase[0][0], 10
             )
             if player_rect.colliderect(laser_rect):
                 return True  # Collision detected
@@ -148,24 +192,49 @@ class Rocket:
         self.delay = 0
         self.coords = [WIDTH, HEIGHT / 2]
         self.player = player  # Each rocket is tied to a player
+        self.rocket_surface = pygame.image.load(
+            "assets/sprites/Rocket.png"
+        ).convert_alpha()
+        self.rocket_surface = pygame.transform.smoothscale(
+            self.rocket_surface,
+            (
+                int(self.rocket_surface.get_width() * 0.75),
+                int(self.rocket_surface.get_height() * 0.75),
+            ),
+        )
 
-    def update(self, game_speed):
+        # Load and scale the warning sprite
+        self.warning_surface = pygame.image.load(
+            "assets/sprites/RocketWarning.png"
+        ).convert_alpha()
+        self.warning_surface = pygame.transform.smoothscale(
+            self.warning_surface,
+            (
+                int(self.warning_surface.get_width() * 1.2),
+                int(self.warning_surface.get_height() * 1.2),
+            ),
+        )
+
+    def update(self, game_speed, player_y):
+
         if not self.active:
             self.counter += 1
         if self.counter > 180:
             self.counter = 0
             self.active = True
             self.delay = 0
-            self.coords = [WIDTH, HEIGHT / 2]
+            self.coords = [WIDTH, random.randint(50, HEIGHT - 50)]  # Random Y position
 
         if self.active:
             if self.delay < 90:
-                if self.coords[1] > self.player.y + 10:
+                # Track the player's Y position with some delay
+                if self.coords[1] > player_y + 10:
                     self.coords[1] -= 3
                 else:
                     self.coords[1] += 3
                 self.delay += 1
             else:
+                # Move the rocket horizontally after delay
                 self.coords[0] -= 10 + game_speed
             if self.coords[0] < -50:
                 self.active = False
@@ -173,32 +242,23 @@ class Rocket:
     def draw(self):
         if self.active:
             if self.delay < 90:
-                pygame.draw.rect(
-                    screen,
-                    "dark red",
-                    [self.coords[0] - 60, self.coords[1] - 25, 50, 50],
-                    0,
-                    5,
-                )
+                # Draw warning indicator before the rocket enters the screen
                 screen.blit(
-                    font.render("!", True, "black"),
-                    (self.coords[0] - 40, self.coords[1] - 20),
+                    self.warning_surface, (self.coords[0] - 60, self.coords[1] - 25)
                 )
             else:
-                pygame.draw.rect(
-                    screen, "red", [self.coords[0], self.coords[1] - 10, 50, 20], 0, 5
-                )
-                pygame.draw.ellipse(
-                    screen,
-                    "orange",
-                    [self.coords[0] + 50, self.coords[1] - 10, 50, 20],
-                    7,
-                )
+                # Draw the rocket sprite
+                screen.blit(self.rocket_surface, (self.coords[0], self.coords[1] - 25))
 
     def check_collision(self, player_rect):
         if self.active:
-            # Create a bounding box for the rocket
-            rocket_rect = pygame.Rect(self.coords[0] - 60, self.coords[1] - 25, 50, 50)
+            # Create a bounding box for the rocket sprite, slightly shrinking it
+            rocket_rect = pygame.Rect(
+                self.coords[0] + 5,
+                self.coords[1] - 20,
+                self.rocket_surface.get_width() - 10,
+                self.rocket_surface.get_height() - 10,
+            )
             if player_rect.colliderect(rocket_rect):
                 return True  # Collision detected
         return False
@@ -208,6 +268,11 @@ class UI:
     def __init__(self):
         self.distance = 0
         self.high_score, self.lifetime = self.load_player_info()
+        self.bg_surface = pygame.image.load(
+            "assets/sprites/BackdropMain.png"
+        ).convert()  # convert the image to a pygame lightweight format
+        self.bg_surface = pygame.transform.scale2x(self.bg_surface)  # double the size
+        self.bg_x = 0  # Initial background position
 
     def load_player_info(self):
         with open("player_info.txt", "r") as file:
@@ -226,7 +291,13 @@ class UI:
         if self.distance > self.high_score:
             self.high_score = self.distance
 
-    def draw(self):
+    def draw_bg(self):
+        screen.blit(self.bg_surface, (self.bg_x, 0))  # First background
+        screen.blit(
+            self.bg_surface, (self.bg_x + self.bg_surface.get_width(), 0)
+        )  # Second background
+
+    def draw_score(self):
         screen.blit(
             font.render(f"Distance: {int(self.distance)} m", True, "white"), (10, 10)
         )
@@ -289,9 +360,9 @@ class Game:
                 action = self.population.creatures[i].act(state)
                 player.booster = action == 1
                 player.update(GRAVITY, (False, False))
-                if self.step > self.warm_up_generations_before_rockets:
-                    self.rockets[i].update(self.game_speed)
-                # Check for collisions
+                if self.step >= self.warm_up_generations_before_rockets:
+                    self.rockets[i].update(self.game_speed, player.y)
+                # # Check for collisions
                 player_rect = player.draw()
                 if self.laser.check_collision(player_rect) or self.rockets[
                     i
@@ -302,12 +373,15 @@ class Game:
     def draw(self):
         screen.fill("black")
         # draw distance and high score
-        self.ui.draw()
+        self.ui.draw_bg()
         self.laser.draw()
+
         for i, player in enumerate(self.players):
             if not player.dead:
                 player.draw()
                 self.rockets[i].draw()
+
+        self.ui.draw_score()
         pygame.display.flip()
 
     def get_state(self, player):
