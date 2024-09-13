@@ -316,6 +316,7 @@ class Game:
         population_size=10,
         warm_up_generations_before_rockets=0,
         is_in_preview=False,
+        seed=None,
     ):
         self.game_speed = 3
         self.step = 0
@@ -341,6 +342,22 @@ class Game:
         ]  # One rocket per player
         self.distance = 0
         self.ui = UI()
+        self.seed = seed  # Store the seed
+
+        # if self.seed is not None:
+        #     self.set_seed(self.seed)
+
+    def set_seed(self, seed):
+        """Set the random seed for deterministic behavior."""
+        import numpy as np
+
+        random.seed(seed)  # Set Python's built-in RNG
+        np.random.seed(seed)  # Set NumPy's RNG (if used)
+        torch.manual_seed(seed)  # Set Torch's RNG
+        pygame.init()  # Re-initialize pygame to reset RNG behavior
+        pygame.display.set_mode([WIDTH, HEIGHT])  # Reset pygame's display
+        pygame.display.set_caption("Jetpack Joyride Remake in Python!")
+        print(f"Game seed set to: {seed}")
 
     def run(self):
         running = True
@@ -458,9 +475,10 @@ class Game:
         self.ui.load_player_info()
         self.ui.distance = 0
         self.game_speed = 3
+        print(len(self.population.best_fitness), "games")
 
 
 if __name__ == "__main__":
-    game = Game(population_size=150, is_in_preview=True)
+    game = Game(population_size=150, is_in_preview=False, seed=42)
     game.run()
     pygame.quit()
