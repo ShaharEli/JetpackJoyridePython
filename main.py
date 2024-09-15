@@ -36,8 +36,6 @@ class Actor(nn.Module):
         self.network = nn.Sequential(
             nn.Linear(state_dim, 128),  # Increased layer size
             nn.ReLU(),
-            nn.Linear(128, 128),  # Increased layer size
-            nn.ReLU(),
             nn.Linear(128, action_dim),
             nn.Softmax(dim=-1),
         )
@@ -51,8 +49,6 @@ class Critic(nn.Module):
         super(Critic, self).__init__()
         self.network = nn.Sequential(
             nn.Linear(state_dim, 128),  # Increased layer size
-            nn.ReLU(),
-            nn.Linear(128, 128),  # Increased layer size
             nn.ReLU(),
             nn.Linear(128, 1),
         )
@@ -92,13 +88,15 @@ class PPOAgent:
         self.actor = Actor(state_dim, action_dim)
         self.critic = Critic(state_dim)
         self.optimizer = optim.Adam(
-            list(self.actor.parameters()) + list(self.critic.parameters()), lr=0.0003
+            list(self.actor.parameters()) + list(self.critic.parameters()), lr=0.00005
         )
         self.memory = PPOMemory()
-        self.gamma = 0.99
+        self.gamma = 0.95
         self.gae_lambda = 0.95
         self.clip_epsilon = 0.2
-        self.epochs = 10
+        self.epochs = 15
+        self.actors = []
+        self.scores = []
 
     def choose_action(self, state):
         state = torch.FloatTensor(state).unsqueeze(0)
@@ -160,12 +158,18 @@ class PPOAgent:
 
         self.memory.clear()
 
+    def add_score(self, score):
+        self.actors.append(self.actor.state_dict())
+        self.scores.append(score)
+
     def save(self, filename):
         torch.save(
             {
                 "actor_state_dict": self.actor.state_dict(),
                 "critic_state_dict": self.critic.state_dict(),
                 "optimizer_state_dict": self.optimizer.state_dict(),
+                "actors": self.actors,
+                "scores": self.scores,
             },
             filename,
         )
@@ -175,6 +179,8 @@ class PPOAgent:
         self.actor.load_state_dict(checkpoint["actor_state_dict"])
         self.critic.load_state_dict(checkpoint["critic_state_dict"])
         self.optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+        self.actors = checkpoint["actors"]
+        self.scores = checkpoint["scores"]
 
 
 class Player:
@@ -411,7 +417,7 @@ class Rocket:
     def check_collision(self, player_rect):
         if self.active:
             # Create a bounding box for the rocket sprite, slightly shrinking it
-            rocket_rect = pygame.Rect(self.coords[0] - 60, self.coords[1] - 25, 50, 50)
+            rocket_rect = pygame.Rect(self.coords[0] - 30, self.coords[1] - 25, 50, 50)
             if player_rect.colliderect(rocket_rect):
                 return True  # Collision detected
         return False
@@ -517,10 +523,8 @@ class Game:
         laser2_y_top = laser2[0][1] / HEIGHT
         laser2_y_bottom = laser2[1][1] / HEIGHT
 
-        missile_up = self.rocket.coords[1] / HEIGHT if self.rocket.active else 2.0
-        missile_horizontal = (
-            self.rocket.coords[0] / WIDTH if self.rocket.active else 2.0
-        )
+        missile_up = self.rocket.coords[1] / HEIGHT if self.rocket.active else -1
+        missile_horizontal = self.rocket.coords[0] / WIDTH if self.rocket.active else -1
 
         player_y = self.player.y / HEIGHT
         player_y_velocity = self.player.y_velocity / 10.0  # Assuming max speed of 10
@@ -564,6 +568,7 @@ class Game:
 
         if done:
             self.agent.update()
+            self.agent.add_score(self.ui.distance)
             self.save_agent()
             logging.info(
                 f"Game Over. Distance: {self.ui.distance:.2f}, Best Reward: {self.best_reward:.2f}"
