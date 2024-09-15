@@ -544,7 +544,7 @@ class Game:
             laser2_y_bottom,
             missile_up,
             missile_horizontal,
-            missile_active
+            missile_active,
         ]
 
     def compute_reward(
@@ -587,8 +587,10 @@ class Game:
                     avoiding_direction = (
                         -1 if player_y < obstacle_center else 1
                     )  # Move away from obstacle center
-
-                    y_change = player_y - self.prev_y if hasattr(self, "prev_y") else 0
+                    if hasattr(self, "prev_y"):
+                        y_change = player_y - self.prev_y
+                    else:
+                        y_change = 0
 
                     if y_change * avoiding_direction > 0:
                         reward += 2.0  # Reward for moving in the correct direction to avoid obstacle
