@@ -1,8 +1,11 @@
 import random
 import pygame
 import torch
-
-from Population import Population
+import torch.nn as nn
+import torch.optim as optim
+from torch.distributions import Categorical
+import numpy as np
+import logging
 
 # Constants
 WIDTH = 1000
@@ -18,6 +21,160 @@ surface = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
 pygame.display.set_caption("Jetpack Joyride Remake in Python!")
 font = pygame.font.Font("freesansbold.ttf", 32)
 timer = pygame.time.Clock()
+
+# Set up logging
+logging.basicConfig(
+    filename="jetpack_joyride_ppo.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
+
+class Actor(nn.Module):
+    def __init__(self, state_dim, action_dim):
+        super(Actor, self).__init__()
+        self.network = nn.Sequential(
+            nn.Linear(state_dim, 128),  # Increased layer size
+            nn.ReLU(),
+            nn.Linear(128, 128),  # Increased layer size
+            nn.ReLU(),
+            nn.Linear(128, action_dim),
+            nn.Softmax(dim=-1),
+        )
+
+    def forward(self, state):
+        return self.network(state)
+
+
+class Critic(nn.Module):
+    def __init__(self, state_dim):
+        super(Critic, self).__init__()
+        self.network = nn.Sequential(
+            nn.Linear(state_dim, 128),  # Increased layer size
+            nn.ReLU(),
+            nn.Linear(128, 128),  # Increased layer size
+            nn.ReLU(),
+            nn.Linear(128, 1),
+        )
+
+    def forward(self, state):
+        return self.network(state)
+
+
+class PPOMemory:
+    def __init__(self):
+        self.states = []
+        self.actions = []
+        self.rewards = []
+        self.values = []
+        self.log_probs = []
+        self.dones = []
+
+    def clear(self):
+        self.states.clear()
+        self.actions.clear()
+        self.rewards.clear()
+        self.values.clear()
+        self.log_probs.clear()
+        self.dones.clear()
+
+    def add(self, state, action, reward, value, log_prob, done):
+        self.states.append(state)
+        self.actions.append(action)
+        self.rewards.append(reward)
+        self.values.append(value)
+        self.log_probs.append(log_prob)
+        self.dones.append(done)
+
+
+class PPOAgent:
+    def __init__(self, state_dim, action_dim):
+        self.actor = Actor(state_dim, action_dim)
+        self.critic = Critic(state_dim)
+        self.optimizer = optim.Adam(
+            list(self.actor.parameters()) + list(self.critic.parameters()), lr=0.0003
+        )
+        self.memory = PPOMemory()
+        self.gamma = 0.99
+        self.gae_lambda = 0.95
+        self.clip_epsilon = 0.2
+        self.epochs = 10
+
+    def choose_action(self, state):
+        state = torch.FloatTensor(state).unsqueeze(0)
+        action_probs = self.actor(state)
+        dist = Categorical(action_probs)
+        action = dist.sample()
+        log_prob = dist.log_prob(action)
+        value = self.critic(state)
+        return action.item(), log_prob.item(), value.item()
+
+    def update(self):
+        states = torch.FloatTensor(self.memory.states)
+        actions = torch.LongTensor(self.memory.actions)
+        rewards = torch.FloatTensor(self.memory.rewards)
+        values = torch.FloatTensor(self.memory.values)
+        log_probs = torch.FloatTensor(self.memory.log_probs)
+        dones = torch.FloatTensor(self.memory.dones)
+
+        # Compute advantages
+        advantages = torch.zeros_like(rewards)
+        last_gae_lam = 0
+        for t in reversed(range(len(rewards))):
+            if t == len(rewards) - 1:
+                next_value = 0
+            else:
+                next_value = values[t + 1]
+            delta = rewards[t] + self.gamma * next_value * (1 - dones[t]) - values[t]
+            advantages[t] = last_gae_lam = (
+                delta + self.gamma * self.gae_lambda * (1 - dones[t]) * last_gae_lam
+            )
+
+        # Normalize advantages
+        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
+        for _ in range(self.epochs):
+            # Compute actor loss
+            new_action_probs = self.actor(states)
+            new_dist = Categorical(new_action_probs)
+            new_log_probs = new_dist.log_prob(actions)
+            ratio = torch.exp(new_log_probs - log_probs)
+            surr1 = ratio * advantages
+            surr2 = (
+                torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon)
+                * advantages
+            )
+            actor_loss = -torch.min(surr1, surr2).mean()
+
+            # Compute critic loss
+            new_values = self.critic(states).squeeze()
+            returns = advantages + values
+            critic_loss = nn.MSELoss()(new_values, returns)
+
+            # Compute total loss
+            loss = actor_loss + 0.5 * critic_loss
+
+            # Optimize the model
+            self.optimizer.zero_grad()
+            loss.backward()
+            self.optimizer.step()
+
+        self.memory.clear()
+
+    def save(self, filename):
+        torch.save(
+            {
+                "actor_state_dict": self.actor.state_dict(),
+                "critic_state_dict": self.critic.state_dict(),
+                "optimizer_state_dict": self.optimizer.state_dict(),
+            },
+            filename,
+        )
+
+    def load(self, filename):
+        checkpoint = torch.load(filename)
+        self.actor.load_state_dict(checkpoint["actor_state_dict"])
+        self.critic.load_state_dict(checkpoint["critic_state_dict"])
+        self.optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
 
 
 class Player:
@@ -313,185 +470,6 @@ class UI:
         )
 
 
-import random
-import pygame
-import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.distributions import Categorical
-import numpy as np
-import logging
-
-# Constants
-WIDTH = 1000
-HEIGHT = 600
-FPS = 60
-INIT_Y = HEIGHT - 130
-GRAVITY = 0.4
-
-# Initialize pygame
-pygame.init()
-screen = pygame.display.set_mode([WIDTH, HEIGHT])
-surface = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
-pygame.display.set_caption("Jetpack Joyride Remake in Python!")
-font = pygame.font.Font("freesansbold.ttf", 32)
-timer = pygame.time.Clock()
-
-# Set up logging
-logging.basicConfig(
-    filename="jetpack_joyride_ppo.log",
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-)
-
-
-class Actor(nn.Module):
-    def __init__(self, state_dim, action_dim):
-        super(Actor, self).__init__()
-        self.network = nn.Sequential(
-            nn.Linear(state_dim, 64),
-            nn.ReLU(),
-            nn.Linear(64, 64),
-            nn.ReLU(),
-            nn.Linear(64, action_dim),
-            nn.Softmax(dim=-1),
-        )
-
-    def forward(self, state):
-        return self.network(state)
-
-
-class Critic(nn.Module):
-    def __init__(self, state_dim):
-        super(Critic, self).__init__()
-        self.network = nn.Sequential(
-            nn.Linear(state_dim, 64),
-            nn.ReLU(),
-            nn.Linear(64, 64),
-            nn.ReLU(),
-            nn.Linear(64, 1),
-        )
-
-    def forward(self, state):
-        return self.network(state)
-
-
-class PPOMemory:
-    def __init__(self):
-        self.states = []
-        self.actions = []
-        self.rewards = []
-        self.values = []
-        self.log_probs = []
-        self.dones = []
-
-    def clear(self):
-        self.states.clear()
-        self.actions.clear()
-        self.rewards.clear()
-        self.values.clear()
-        self.log_probs.clear()
-        self.dones.clear()
-
-    def add(self, state, action, reward, value, log_prob, done):
-        self.states.append(state)
-        self.actions.append(action)
-        self.rewards.append(reward)
-        self.values.append(value)
-        self.log_probs.append(log_prob)
-        self.dones.append(done)
-
-
-class PPOAgent:
-    def __init__(self, state_dim, action_dim):
-        self.actor = Actor(state_dim, action_dim)
-        self.critic = Critic(state_dim)
-        self.optimizer = optim.Adam(
-            list(self.actor.parameters()) + list(self.critic.parameters()), lr=0.0003
-        )
-        self.memory = PPOMemory()
-        self.gamma = 0.99
-        self.gae_lambda = 0.95
-        self.clip_epsilon = 0.2
-        self.epochs = 10
-
-    def choose_action(self, state):
-        state = torch.FloatTensor(state).unsqueeze(0)
-        action_probs = self.actor(state)
-        dist = Categorical(action_probs)
-        action = dist.sample()
-        log_prob = dist.log_prob(action)
-        value = self.critic(state)
-        return action.item(), log_prob.item(), value.item()
-
-    def update(self):
-        states = torch.FloatTensor(self.memory.states)
-        actions = torch.LongTensor(self.memory.actions)
-        rewards = torch.FloatTensor(self.memory.rewards)
-        values = torch.FloatTensor(self.memory.values)
-        log_probs = torch.FloatTensor(self.memory.log_probs)
-        dones = torch.FloatTensor(self.memory.dones)
-
-        # Compute advantages
-        advantages = torch.zeros_like(rewards)
-        last_gae_lam = 0
-        for t in reversed(range(len(rewards))):
-            if t == len(rewards) - 1:
-                next_value = 0
-            else:
-                next_value = values[t + 1]
-            delta = rewards[t] + self.gamma * next_value * (1 - dones[t]) - values[t]
-            advantages[t] = last_gae_lam = (
-                delta + self.gamma * self.gae_lambda * (1 - dones[t]) * last_gae_lam
-            )
-
-        # Normalize advantages
-        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
-        for _ in range(self.epochs):
-            # Compute actor loss
-            new_action_probs = self.actor(states)
-            new_dist = Categorical(new_action_probs)
-            new_log_probs = new_dist.log_prob(actions)
-            ratio = torch.exp(new_log_probs - log_probs)
-            surr1 = ratio * advantages
-            surr2 = (
-                torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon)
-                * advantages
-            )
-            actor_loss = -torch.min(surr1, surr2).mean()
-
-            # Compute critic loss
-            new_values = self.critic(states).squeeze()
-            returns = advantages + values
-            critic_loss = nn.MSELoss()(new_values, returns)
-
-            # Compute total loss
-            loss = actor_loss + 0.5 * critic_loss
-
-            # Optimize the model
-            self.optimizer.zero_grad()
-            loss.backward()
-            self.optimizer.step()
-
-        self.memory.clear()
-
-    def save(self, filename):
-        torch.save(
-            {
-                "actor_state_dict": self.actor.state_dict(),
-                "critic_state_dict": self.critic.state_dict(),
-                "optimizer_state_dict": self.optimizer.state_dict(),
-            },
-            filename,
-        )
-
-    def load(self, filename):
-        checkpoint = torch.load(filename)
-        self.actor.load_state_dict(checkpoint["actor_state_dict"])
-        self.critic.load_state_dict(checkpoint["critic_state_dict"])
-        self.optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
-
-
 class Game:
     def __init__(self, seed=None):
         self.game_speed = 3
@@ -500,7 +478,7 @@ class Game:
         self.rocket = Rocket(self.player)
         self.ui = UI()
         self.seed = seed
-        self.state_dim = 9
+        self.state_dim = 11  # Updated state dimension
         self.action_dim = 2
         self.agent = PPOAgent(self.state_dim, self.action_dim)
         self.best_reward = float("-inf")
@@ -523,25 +501,41 @@ class Game:
         if self.laser.lasers:
             lasers = sorted(self.laser.lasers, key=lambda x: x[0][0])
             lasers = list(filter(lambda x: x[0][0] >= 100, lasers))
-            if len(lasers) > 1:
+            if len(lasers) >= 2:
                 laser1, laser2 = lasers[:2]
             else:
-                laser1 = laser2 = lasers[0]
+                laser1 = lasers[0]
+                laser2 = laser1
         else:
             laser1 = [[WIDTH, 0], [WIDTH, HEIGHT]]
             laser2 = laser1
 
-        missile_up = self.rocket.coords[1] if self.rocket.active else HEIGHT * 2
-        missile_horizontal = self.rocket.coords[0] if self.rocket.active else WIDTH * 2
+        laser1_x = laser1[0][0] / WIDTH
+        laser1_y_top = laser1[0][1] / HEIGHT
+        laser1_y_bottom = laser1[1][1] / HEIGHT
+        laser2_x = laser2[0][0] / WIDTH
+        laser2_y_top = laser2[0][1] / HEIGHT
+        laser2_y_bottom = laser2[1][1] / HEIGHT
+
+        missile_up = self.rocket.coords[1] / HEIGHT if self.rocket.active else 2.0
+        missile_horizontal = (
+            self.rocket.coords[0] / WIDTH if self.rocket.active else 2.0
+        )
+
+        player_y = self.player.y / HEIGHT
+        player_y_velocity = self.player.y_velocity / 10.0  # Assuming max speed of 10
+        game_speed = self.game_speed / 10.0  # Assuming max game_speed of 10
 
         return [
-            self.player.y,
-            self.player.y_velocity,
-            self.game_speed,
-            laser1[0][1],
-            laser1[1][1],
-            laser2[0][1],
-            laser2[1][1],
+            player_y,
+            player_y_velocity,
+            game_speed,
+            laser1_x,
+            laser1_y_top,
+            laser1_y_bottom,
+            laser2_x,
+            laser2_y_top,
+            laser2_y_bottom,
             missile_up,
             missile_horizontal,
         ]
