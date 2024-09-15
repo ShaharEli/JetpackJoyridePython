@@ -703,7 +703,7 @@ class Game:
         self.game_speed = 3
         self.ui.distance = 0
         self.previous_distance_to_obstacle = None
-        self.prev_y = None
+        self.prev_y = 0
         self.prev_y_missile = None
         self.infront_obstacle = False
         self.close_to_missile = False
