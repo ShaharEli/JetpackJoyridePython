@@ -484,13 +484,14 @@ class Game:
         self.rocket = Rocket(self.player)
         self.ui = UI()
         self.seed = seed
-        self.state_dim = 11  # Updated state dimension
+        self.state_dim = 12  # Updated state dimension
         self.action_dim = 2
         self.agent = PPOAgent(self.state_dim, self.action_dim)
         self.best_reward = float("-inf")
 
         # if self.seed is not None:
         #     self.set_seed(self.seed)
+        self.previous_distance_to_obstacle = None
 
         self.load_agent()
 
@@ -529,6 +530,7 @@ class Game:
         player_y = self.player.y / HEIGHT
         player_y_velocity = self.player.y_velocity / 10.0  # Assuming max speed of 10
         game_speed = self.game_speed / 10.0  # Assuming max game_speed of 10
+        missile_active = 1.0 if self.rocket.active else 0.0
 
         return [
             player_y,
@@ -542,7 +544,109 @@ class Game:
             laser2_y_bottom,
             missile_up,
             missile_horizontal,
+            missile_active
         ]
+
+    def compute_reward(
+        self,
+        collision,
+        distance_to_obstacle,
+        obstacle_y_start,
+        obstacle_y_end,
+        missile_distance,
+        missile_y,
+    ):
+        reward = 1.0  # Base reward for survival
+        player_y = self.player.y
+
+        # Calculate floor and ceiling proximity
+        floor_proximity = (
+            HEIGHT - self.player.player_surface.get_height()
+        ) - player_y  # Distance to floor
+        ceiling_proximity = player_y  # Distance to ceiling
+        is_close_to_boundary = floor_proximity < 70 or ceiling_proximity < 70
+
+        if collision:
+            reward = -10.0  # Penalty for collision
+            return reward
+
+        # Penalty for being too close to boundaries
+        if is_close_to_boundary:
+            reward -= 1.0
+
+        # Obstacle avoidance logic
+        if distance_to_obstacle is not None:
+            if obstacle_y_start is not None and obstacle_y_end is not None:
+                player_bottom = player_y + self.player.player_rect.height
+                if player_bottom >= obstacle_y_start and player_y <= obstacle_y_end:
+                    # Player is within the vertical range of the obstacle
+                    reward -= 2.0  # Penalty for being in front of the obstacle
+
+                    # Determine the direction to avoid the obstacle
+                    obstacle_center = (obstacle_y_start + obstacle_y_end) / 2
+                    avoiding_direction = (
+                        -1 if player_y < obstacle_center else 1
+                    )  # Move away from obstacle center
+
+                    y_change = player_y - self.prev_y if hasattr(self, "prev_y") else 0
+
+                    if y_change * avoiding_direction > 0:
+                        reward += 2.0  # Reward for moving in the correct direction to avoid obstacle
+
+                    self.infront_obstacle = True
+                else:
+                    if hasattr(self, "infront_obstacle") and self.infront_obstacle:
+                        reward += 5.0  # Reward for successfully avoiding the obstacle
+                        self.infront_obstacle = False
+
+                self.prev_y = player_y
+
+        # Missile avoidance logic
+        if self.rocket.active and missile_distance is not None:
+            missile_horizontal_distance = missile_distance
+            missile_vertical_distance = abs(player_y - missile_y)
+
+            if missile_horizontal_distance < 200:
+                # Missile is close horizontally
+                reward -= 2.0  # Penalty for being close to missile
+
+                # Determine the direction to avoid the missile
+                avoiding_direction = (
+                    -1 if player_y < missile_y else 1
+                )  # Move away from missile
+
+                y_change = (
+                    player_y - self.prev_y_missile
+                    if hasattr(self, "prev_y_missile")
+                    else 0
+                )
+
+                if y_change * avoiding_direction > 0:
+                    reward += 2.0  # Reward for moving in the correct direction to avoid missile
+
+                self.close_to_missile = True
+            else:
+                if hasattr(self, "close_to_missile") and self.close_to_missile:
+                    reward += 5.0  # Reward for successfully avoiding the missile
+                    self.close_to_missile = False
+
+            self.prev_y_missile = player_y
+
+        return reward
+
+    def get_distance_to_next_obstacle(self):
+        player_x = 120  # Player's x-coordinate
+        if self.laser.lasers:
+            lasers = sorted(self.laser.lasers, key=lambda x: x[0][0])
+            next_laser = next(
+                (laser for laser in lasers if laser[0][0] > player_x), None
+            )
+            if next_laser:
+                distance = next_laser[0][0] - player_x
+                obstacle_y_start = next_laser[0][1]
+                obstacle_y_end = next_laser[1][1]
+                return distance, obstacle_y_start, obstacle_y_end
+        return None, None, None
 
     def update(self):
         state = self.get_state()
@@ -559,8 +663,21 @@ class Game:
         collision = self.laser.check_collision(
             player_rect
         ) or self.rocket.check_collision(player_rect)
+        distance_to_obstacle, obstacle_y_position, obstacle_height = (
+            self.get_distance_to_next_obstacle()
+        )
+        missile_distance = self.rocket.coords[0] - 120 if self.rocket.active else None
+        missile_y = self.rocket.coords[1] if self.rocket.active else None
+        # Compute reward
+        reward = self.compute_reward(
+            collision,
+            distance_to_obstacle,
+            obstacle_y_position,
+            obstacle_height,
+            missile_distance,
+            missile_y,
+        )
 
-        reward = 1 if not collision else -100
         done = collision
 
         next_state = self.get_state()
@@ -583,6 +700,11 @@ class Game:
         self.rocket = Rocket(self.player)
         self.game_speed = 3
         self.ui.distance = 0
+        self.previous_distance_to_obstacle = None
+        self.prev_y = None
+        self.prev_y_missile = None
+        self.infront_obstacle = False
+        self.close_to_missile = False
 
     def draw(self):
         screen.fill("black")
