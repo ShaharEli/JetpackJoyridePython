@@ -64,7 +64,7 @@ class Player:
     def get_collision_rect(self):
         return self.collision_rect  # Return the smaller collision rectangle
 
-    def update(self, gravity, colliding):
+    def update(self, gravity):
         # Apply gravity or booster effect
         if self.dead:
             return
@@ -215,7 +215,10 @@ class Rocket:
             ),
         )
 
-    def update(self, game_speed, player_y):
+    def update(
+        self,
+        game_speed,
+    ):
 
         if not self.active:
             self.counter += 1
@@ -310,119 +313,213 @@ class UI:
         )
 
 
-class Game:
-    def __init__(
-        self,
-        population_size=10,
-        warm_up_generations_before_rockets=0,
-        is_in_preview=False,
-        seed=None,
-    ):
-        self.game_speed = 3
-        self.step = 0
-        self.warm_up_generations_before_rockets = warm_up_generations_before_rockets
-        self.population = Population(
-            size=population_size,
-            creature_args={
-                "input_size": 9,  # y pos, velocity, laser1 up/down, laser2 up/down, missile up
-                "output_size": 2,  # Boost or not
-                "hidden_size": 64,
-            },
-            is_in_preview=is_in_preview,
+import random
+import pygame
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.distributions import Categorical
+import numpy as np
+import logging
+
+# Constants
+WIDTH = 1000
+HEIGHT = 600
+FPS = 60
+INIT_Y = HEIGHT - 130
+GRAVITY = 0.4
+
+# Initialize pygame
+pygame.init()
+screen = pygame.display.set_mode([WIDTH, HEIGHT])
+surface = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+pygame.display.set_caption("Jetpack Joyride Remake in Python!")
+font = pygame.font.Font("freesansbold.ttf", 32)
+timer = pygame.time.Clock()
+
+# Set up logging
+logging.basicConfig(
+    filename="jetpack_joyride_ppo.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
+
+class Actor(nn.Module):
+    def __init__(self, state_dim, action_dim):
+        super(Actor, self).__init__()
+        self.network = nn.Sequential(
+            nn.Linear(state_dim, 64),
+            nn.ReLU(),
+            nn.Linear(64, 64),
+            nn.ReLU(),
+            nn.Linear(64, action_dim),
+            nn.Softmax(dim=-1),
         )
-        self.is_in_preview = is_in_preview
-        self.population.load("population.pth")
-        self.players = [
-            Player() for _ in range(population_size if not is_in_preview else 1)
-        ]
+
+    def forward(self, state):
+        return self.network(state)
+
+
+class Critic(nn.Module):
+    def __init__(self, state_dim):
+        super(Critic, self).__init__()
+        self.network = nn.Sequential(
+            nn.Linear(state_dim, 64),
+            nn.ReLU(),
+            nn.Linear(64, 64),
+            nn.ReLU(),
+            nn.Linear(64, 1),
+        )
+
+    def forward(self, state):
+        return self.network(state)
+
+
+class PPOMemory:
+    def __init__(self):
+        self.states = []
+        self.actions = []
+        self.rewards = []
+        self.values = []
+        self.log_probs = []
+        self.dones = []
+
+    def clear(self):
+        self.states.clear()
+        self.actions.clear()
+        self.rewards.clear()
+        self.values.clear()
+        self.log_probs.clear()
+        self.dones.clear()
+
+    def add(self, state, action, reward, value, log_prob, done):
+        self.states.append(state)
+        self.actions.append(action)
+        self.rewards.append(reward)
+        self.values.append(value)
+        self.log_probs.append(log_prob)
+        self.dones.append(done)
+
+
+class PPOAgent:
+    def __init__(self, state_dim, action_dim):
+        self.actor = Actor(state_dim, action_dim)
+        self.critic = Critic(state_dim)
+        self.optimizer = optim.Adam(
+            list(self.actor.parameters()) + list(self.critic.parameters()), lr=0.0003
+        )
+        self.memory = PPOMemory()
+        self.gamma = 0.99
+        self.gae_lambda = 0.95
+        self.clip_epsilon = 0.2
+        self.epochs = 10
+
+    def choose_action(self, state):
+        state = torch.FloatTensor(state).unsqueeze(0)
+        action_probs = self.actor(state)
+        dist = Categorical(action_probs)
+        action = dist.sample()
+        log_prob = dist.log_prob(action)
+        value = self.critic(state)
+        return action.item(), log_prob.item(), value.item()
+
+    def update(self):
+        states = torch.FloatTensor(self.memory.states)
+        actions = torch.LongTensor(self.memory.actions)
+        rewards = torch.FloatTensor(self.memory.rewards)
+        values = torch.FloatTensor(self.memory.values)
+        log_probs = torch.FloatTensor(self.memory.log_probs)
+        dones = torch.FloatTensor(self.memory.dones)
+
+        # Compute advantages
+        advantages = torch.zeros_like(rewards)
+        last_gae_lam = 0
+        for t in reversed(range(len(rewards))):
+            if t == len(rewards) - 1:
+                next_value = 0
+            else:
+                next_value = values[t + 1]
+            delta = rewards[t] + self.gamma * next_value * (1 - dones[t]) - values[t]
+            advantages[t] = last_gae_lam = (
+                delta + self.gamma * self.gae_lambda * (1 - dones[t]) * last_gae_lam
+            )
+
+        # Normalize advantages
+        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
+        for _ in range(self.epochs):
+            # Compute actor loss
+            new_action_probs = self.actor(states)
+            new_dist = Categorical(new_action_probs)
+            new_log_probs = new_dist.log_prob(actions)
+            ratio = torch.exp(new_log_probs - log_probs)
+            surr1 = ratio * advantages
+            surr2 = (
+                torch.clamp(ratio, 1.0 - self.clip_epsilon, 1.0 + self.clip_epsilon)
+                * advantages
+            )
+            actor_loss = -torch.min(surr1, surr2).mean()
+
+            # Compute critic loss
+            new_values = self.critic(states).squeeze()
+            returns = advantages + values
+            critic_loss = nn.MSELoss()(new_values, returns)
+
+            # Compute total loss
+            loss = actor_loss + 0.5 * critic_loss
+
+            # Optimize the model
+            self.optimizer.zero_grad()
+            loss.backward()
+            self.optimizer.step()
+
+        self.memory.clear()
+
+    def save(self, filename):
+        torch.save(
+            {
+                "actor_state_dict": self.actor.state_dict(),
+                "critic_state_dict": self.critic.state_dict(),
+                "optimizer_state_dict": self.optimizer.state_dict(),
+            },
+            filename,
+        )
+
+    def load(self, filename):
+        checkpoint = torch.load(filename)
+        self.actor.load_state_dict(checkpoint["actor_state_dict"])
+        self.critic.load_state_dict(checkpoint["critic_state_dict"])
+        self.optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+
+
+class Game:
+    def __init__(self, seed=None):
+        self.game_speed = 3
+        self.player = Player()
         self.laser = Laser()
-        self.rockets = [
-            Rocket(self.players[i])
-            for i in range(population_size if not is_in_preview else 1)
-        ]  # One rocket per player
-        self.distance = 0
+        self.rocket = Rocket(self.player)
         self.ui = UI()
-        self.seed = seed  # Store the seed
+        self.seed = seed
+        self.state_dim = 9
+        self.action_dim = 2
+        self.agent = PPOAgent(self.state_dim, self.action_dim)
+        self.best_reward = float("-inf")
 
         # if self.seed is not None:
         #     self.set_seed(self.seed)
 
+        self.load_agent()
+
     def set_seed(self, seed):
-        """Set the random seed for deterministic behavior."""
-        import numpy as np
-
-        random.seed(seed)  # Set Python's built-in RNG
-        np.random.seed(seed)  # Set NumPy's RNG (if used)
-        torch.manual_seed(seed)  # Set Torch's RNG
-        pygame.init()  # Re-initialize pygame to reset RNG behavior
-        pygame.display.set_mode([WIDTH, HEIGHT])  # Reset pygame's display
+        random.seed(seed)
+        np.random.seed(seed)
+        torch.manual_seed(seed)
+        pygame.init()
+        pygame.display.set_mode([WIDTH, HEIGHT])
         pygame.display.set_caption("Jetpack Joyride Remake in Python!")
-        print(f"Game seed set to: {seed}")
+        logging.info(f"Game seed set to: {seed}")
 
-    def run(self):
-        running = True
-        self.ui.load_player_info()
-        while running:
-            timer.tick(FPS)
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
-
-            # Update game objects
-            self.update()
-
-            # Draw everything
-            self.draw()
-
-            # Check if all players are dead
-            if all(player.dead for player in self.players):
-                self.ui.save_player_info()
-                self.end_generation()
-                if self.is_in_preview and self.population.preview_done():
-                    running = False
-                self.step += 1
-
-    def update(self):
-        self.distance += self.game_speed
-        self.laser.update(self.game_speed)
-        self.ui.update(self.game_speed)
-        for i, player in enumerate(self.players):
-            if not player.dead:
-                state = self.get_state(player)
-                action = self.population.creatures[i].act(state)
-                player.booster = action == 1
-                player.update(GRAVITY, (False, False))
-                if self.step >= self.warm_up_generations_before_rockets:
-                    self.rockets[i].update(self.game_speed, player.y)
-                # # Check for collisions
-                player_rect = player.draw()
-                if self.laser.check_collision(player_rect) or self.rockets[
-                    i
-                ].check_collision(player_rect):
-                    player.dead = True
-                    self.population.creatures[i].set_fitness(self.distance)
-
-    def draw(self):
-        screen.fill("black")
-        # draw distance and high score
-        self.ui.draw_bg()
-        self.laser.draw()
-
-        for i, player in enumerate(self.players):
-            if not player.dead:
-                player.draw()
-                self.rockets[i].draw()
-        if self.is_in_preview:
-            self.ui.preview(
-                self.population.get_preview_generation(),
-                self.population.get_preview_generation_best(),
-            )
-        else:
-            self.ui.draw_score()
-        pygame.display.flip()
-
-    def get_state(self, player):
-        # Get the closest lasers and missile position relative to the player
+    def get_state(self):
         if self.laser.lasers:
             lasers = sorted(self.laser.lasers, key=lambda x: x[0][0])
             lasers = list(filter(lambda x: x[0][0] >= 100, lasers))
@@ -434,51 +531,98 @@ class Game:
             laser1 = [[WIDTH, 0], [WIDTH, HEIGHT]]
             laser2 = laser1
 
-        missile_up = (
-            self.rockets[self.players.index(player)].coords[1]
-            if self.rockets[self.players.index(player)].active
-            else HEIGHT * 2
-        )
+        missile_up = self.rocket.coords[1] if self.rocket.active else HEIGHT * 2
+        missile_horizontal = self.rocket.coords[0] if self.rocket.active else WIDTH * 2
 
-        missile_horizontal = (
-            self.rockets[self.players.index(player)].coords[0]
-            if self.rockets[self.players.index(player)].active
-            else WIDTH * 2
-        )
-        return torch.tensor(
-            [
-                player.y,
-                player.y_velocity,
-                self.game_speed,
-                laser1[0][1],  # closest laser up y
-                laser1[1][1],  # closest laser down y
-                laser2[0][1],  # second closest laser up y
-                laser2[1][1],  # second closest laser down y
-                missile_up,
-                missile_horizontal,
-            ],
-            dtype=torch.float32,
-        )
+        return [
+            self.player.y,
+            self.player.y_velocity,
+            self.game_speed,
+            laser1[0][1],
+            laser1[1][1],
+            laser2[0][1],
+            laser2[1][1],
+            missile_up,
+            missile_horizontal,
+        ]
 
-    def end_generation(self):
-        # Evolve the population based on fitness
-        if self.is_in_preview:
-            self.population.fetch_next_creature()
-        else:
-            self.population.evolve()
-            self.population.save("population.pth")
-        # Reset for the next generation
-        self.distance = 0
-        self.players = [Player() for _ in range(len(self.players))]
+    def update(self):
+        state = self.get_state()
+        action, log_prob, value = self.agent.choose_action(state)
+
+        self.player.booster = action == 1
+        self.player.update(GRAVITY)
+        self.laser.update(self.game_speed)
+        self.rocket.update(self.game_speed)
+        self.ui.update(self.game_speed)
+
+        # Check for collisions
+        player_rect = self.player.get_collision_rect()
+        collision = self.laser.check_collision(
+            player_rect
+        ) or self.rocket.check_collision(player_rect)
+
+        reward = 1 if not collision else -100
+        done = collision
+
+        next_state = self.get_state()
+        self.agent.memory.add(state, action, reward, value, log_prob, done)
+
+        if done:
+            self.agent.update()
+            self.save_agent()
+            logging.info(
+                f"Game Over. Distance: {self.ui.distance:.2f}, Best Reward: {self.best_reward:.2f}"
+            )
+            self.reset()
+
+        return done
+
+    def reset(self):
+        self.player = Player()
         self.laser = Laser()
-        self.rockets = [Rocket(self.players[i]) for i in range(len(self.players))]
-        self.ui.load_player_info()
-        self.ui.distance = 0
+        self.rocket = Rocket(self.player)
         self.game_speed = 3
-        print(len(self.population.best_fitness), "games")
+        self.ui.distance = 0
+
+    def draw(self):
+        screen.fill("black")
+        self.ui.draw_bg()
+        self.laser.draw()
+        self.player.draw()
+        self.rocket.draw()
+        self.ui.draw_score()
+        pygame.display.flip()
+
+    def run(self):
+        running = True
+        while running:
+            timer.tick(FPS)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            done = self.update()
+            self.draw()
+
+            if done:
+                self.best_reward = max(self.best_reward, self.ui.distance)
+
+        pygame.quit()
+
+    def save_agent(self):
+        self.agent.save("ppo_agent.pth")
+        logging.info("Agent saved")
+
+    def load_agent(self):
+        try:
+            self.agent.load("ppo_agent.pth")
+            print("Loading agent")
+            logging.info("Agent loaded")
+        except FileNotFoundError:
+            logging.info("No saved agent found. Starting with a new agent.")
 
 
 if __name__ == "__main__":
-    game = Game(population_size=150, is_in_preview=False, seed=42)
+    game = Game(seed=42)
     game.run()
-    pygame.quit()
