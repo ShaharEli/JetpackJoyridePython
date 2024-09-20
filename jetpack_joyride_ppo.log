@@ -23,3 +23,1883 @@
 2024-09-15 18:41:19,634 - INFO - Game Over. Distance: 861.00, Best Reward: 0.00
 2024-09-15 18:41:24,937 - INFO - Agent saved
 2024-09-15 18:41:24,937 - INFO - Game Over. Distance: 951.00, Best Reward: 0.00
+2024-09-15 18:41:30,524 - INFO - Agent saved
+2024-09-15 18:41:30,524 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:41:36,079 - INFO - Agent saved
+2024-09-15 18:41:36,079 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:41:41,643 - INFO - Agent saved
+2024-09-15 18:41:41,643 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:41:46,941 - INFO - Agent saved
+2024-09-15 18:41:46,941 - INFO - Game Over. Distance: 948.00, Best Reward: 0.00
+2024-09-15 18:41:52,516 - INFO - Agent saved
+2024-09-15 18:41:52,516 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:41:58,111 - INFO - Agent saved
+2024-09-15 18:41:58,111 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:42:03,195 - INFO - Agent saved
+2024-09-15 18:42:03,195 - INFO - Game Over. Distance: 909.00, Best Reward: 0.00
+2024-09-15 18:42:08,787 - INFO - Agent saved
+2024-09-15 18:42:08,787 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:42:13,638 - INFO - Agent saved
+2024-09-15 18:42:13,638 - INFO - Game Over. Distance: 870.00, Best Reward: 0.00
+2024-09-15 18:42:22,989 - INFO - Agent saved
+2024-09-15 18:42:22,989 - INFO - Game Over. Distance: 1680.00, Best Reward: 0.00
+2024-09-15 18:42:28,562 - INFO - Agent saved
+2024-09-15 18:42:28,562 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:42:34,119 - INFO - Agent saved
+2024-09-15 18:42:34,119 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:42:39,684 - INFO - Agent saved
+2024-09-15 18:42:39,684 - INFO - Game Over. Distance: 996.00, Best Reward: 0.00
+2024-09-15 18:42:45,267 - INFO - Agent saved
+2024-09-15 18:42:45,267 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:42:50,825 - INFO - Agent saved
+2024-09-15 18:42:50,825 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:42:56,393 - INFO - Agent saved
+2024-09-15 18:42:56,393 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:01,972 - INFO - Agent saved
+2024-09-15 18:43:01,972 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:07,554 - INFO - Agent saved
+2024-09-15 18:43:07,554 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:13,018 - INFO - Agent saved
+2024-09-15 18:43:13,018 - INFO - Game Over. Distance: 978.00, Best Reward: 0.00
+2024-09-15 18:43:18,593 - INFO - Agent saved
+2024-09-15 18:43:18,593 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:24,197 - INFO - Agent saved
+2024-09-15 18:43:24,197 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:29,782 - INFO - Agent saved
+2024-09-15 18:43:29,783 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:35,487 - INFO - Agent saved
+2024-09-15 18:43:35,488 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:42,235 - INFO - Agent saved
+2024-09-15 18:43:42,235 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:47,840 - INFO - Agent saved
+2024-09-15 18:43:47,840 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:53,460 - INFO - Agent saved
+2024-09-15 18:43:53,460 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:43:59,097 - INFO - Agent saved
+2024-09-15 18:43:59,118 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:44:04,743 - INFO - Agent saved
+2024-09-15 18:44:04,744 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:44:10,381 - INFO - Agent saved
+2024-09-15 18:44:10,382 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:44:16,020 - INFO - Agent saved
+2024-09-15 18:44:16,020 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:44:21,670 - INFO - Agent saved
+2024-09-15 18:44:21,670 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:44:26,841 - INFO - Agent saved
+2024-09-15 18:44:26,841 - INFO - Game Over. Distance: 915.00, Best Reward: 0.00
+2024-09-15 18:44:32,463 - INFO - Agent saved
+2024-09-15 18:44:32,463 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:44:38,199 - INFO - Agent saved
+2024-09-15 18:44:38,199 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:44:43,899 - INFO - Agent saved
+2024-09-15 18:44:43,900 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:44:49,539 - INFO - Agent saved
+2024-09-15 18:44:49,539 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:44:55,226 - INFO - Agent saved
+2024-09-15 18:44:55,226 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:00,920 - INFO - Agent saved
+2024-09-15 18:45:00,920 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:06,226 - INFO - Agent saved
+2024-09-15 18:45:06,227 - INFO - Game Over. Distance: 939.00, Best Reward: 0.00
+2024-09-15 18:45:11,903 - INFO - Agent saved
+2024-09-15 18:45:11,903 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:17,599 - INFO - Agent saved
+2024-09-15 18:45:17,599 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:23,477 - INFO - Agent saved
+2024-09-15 18:45:23,477 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:29,194 - INFO - Agent saved
+2024-09-15 18:45:29,194 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:35,008 - INFO - Agent saved
+2024-09-15 18:45:35,009 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:40,734 - INFO - Agent saved
+2024-09-15 18:45:40,734 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:46,725 - INFO - Agent saved
+2024-09-15 18:45:46,725 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:52,498 - INFO - Agent saved
+2024-09-15 18:45:52,498 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:45:58,201 - INFO - Agent saved
+2024-09-15 18:45:58,201 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:46:04,019 - INFO - Agent saved
+2024-09-15 18:46:04,020 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:46:09,809 - INFO - Agent saved
+2024-09-15 18:46:09,809 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:46:15,564 - INFO - Agent saved
+2024-09-15 18:46:15,564 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:46:21,156 - INFO - Agent saved
+2024-09-15 18:46:21,156 - INFO - Game Over. Distance: 969.00, Best Reward: 0.00
+2024-09-15 18:46:26,887 - INFO - Agent saved
+2024-09-15 18:46:26,888 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:46:32,706 - INFO - Agent saved
+2024-09-15 18:46:32,706 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:46:38,466 - INFO - Agent saved
+2024-09-15 18:46:38,466 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:46:43,823 - INFO - Agent saved
+2024-09-15 18:46:43,823 - INFO - Game Over. Distance: 930.00, Best Reward: 0.00
+2024-09-15 18:46:49,548 - INFO - Agent saved
+2024-09-15 18:46:49,548 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:46:55,333 - INFO - Agent saved
+2024-09-15 18:46:55,333 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:01,142 - INFO - Agent saved
+2024-09-15 18:47:01,142 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:07,056 - INFO - Agent saved
+2024-09-15 18:47:07,056 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:12,769 - INFO - Agent saved
+2024-09-15 18:47:12,769 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:18,527 - INFO - Agent saved
+2024-09-15 18:47:18,527 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:24,310 - INFO - Agent saved
+2024-09-15 18:47:24,310 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:30,061 - INFO - Agent saved
+2024-09-15 18:47:30,062 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:35,887 - INFO - Agent saved
+2024-09-15 18:47:35,887 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:41,583 - INFO - Agent saved
+2024-09-15 18:47:41,584 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:47,326 - INFO - Agent saved
+2024-09-15 18:47:47,326 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:53,065 - INFO - Agent saved
+2024-09-15 18:47:53,065 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:47:58,773 - INFO - Agent saved
+2024-09-15 18:47:58,773 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:48:04,527 - INFO - Agent saved
+2024-09-15 18:48:04,527 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:48:10,237 - INFO - Agent saved
+2024-09-15 18:48:10,238 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:48:15,937 - INFO - Agent saved
+2024-09-15 18:48:15,937 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:48:21,684 - INFO - Agent saved
+2024-09-15 18:48:21,684 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:48:27,455 - INFO - Agent saved
+2024-09-15 18:48:27,455 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:48:32,620 - INFO - Agent saved
+2024-09-15 18:48:32,620 - INFO - Game Over. Distance: 903.00, Best Reward: 0.00
+2024-09-15 18:48:38,327 - INFO - Agent saved
+2024-09-15 18:48:38,327 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:48:44,148 - INFO - Agent saved
+2024-09-15 18:48:44,149 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:48:49,871 - INFO - Agent saved
+2024-09-15 18:48:49,871 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:48:55,615 - INFO - Agent saved
+2024-09-15 18:48:55,615 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:01,371 - INFO - Agent saved
+2024-09-15 18:49:01,372 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:07,127 - INFO - Agent saved
+2024-09-15 18:49:07,127 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:12,818 - INFO - Agent saved
+2024-09-15 18:49:12,818 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:18,532 - INFO - Agent saved
+2024-09-15 18:49:18,533 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:24,322 - INFO - Agent saved
+2024-09-15 18:49:24,322 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:30,069 - INFO - Agent saved
+2024-09-15 18:49:30,069 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:35,808 - INFO - Agent saved
+2024-09-15 18:49:35,809 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:41,498 - INFO - Agent saved
+2024-09-15 18:49:41,498 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:47,185 - INFO - Agent saved
+2024-09-15 18:49:47,185 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:52,947 - INFO - Agent saved
+2024-09-15 18:49:52,947 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:49:58,662 - INFO - Agent saved
+2024-09-15 18:49:58,663 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:50:04,345 - INFO - Agent saved
+2024-09-15 18:50:04,345 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:50:10,020 - INFO - Agent saved
+2024-09-15 18:50:10,020 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:50:15,717 - INFO - Agent saved
+2024-09-15 18:50:15,717 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:50:20,755 - INFO - Agent saved
+2024-09-15 18:50:20,755 - INFO - Game Over. Distance: 885.00, Best Reward: 0.00
+2024-09-15 18:50:26,395 - INFO - Agent saved
+2024-09-15 18:50:26,395 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:50:32,069 - INFO - Agent saved
+2024-09-15 18:50:32,069 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:50:37,738 - INFO - Agent saved
+2024-09-15 18:50:37,738 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:50:43,011 - INFO - Agent saved
+2024-09-15 18:50:43,012 - INFO - Game Over. Distance: 933.00, Best Reward: 0.00
+2024-09-15 18:50:48,666 - INFO - Agent saved
+2024-09-15 18:50:48,666 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:50:54,331 - INFO - Agent saved
+2024-09-15 18:50:54,331 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:51:00,001 - INFO - Agent saved
+2024-09-15 18:51:00,001 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:51:05,080 - INFO - Agent saved
+2024-09-15 18:51:05,080 - INFO - Game Over. Distance: 900.00, Best Reward: 0.00
+2024-09-15 18:51:10,096 - INFO - Agent saved
+2024-09-15 18:51:10,096 - INFO - Game Over. Distance: 882.00, Best Reward: 0.00
+2024-09-15 18:51:15,736 - INFO - Agent saved
+2024-09-15 18:51:15,736 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:51:21,373 - INFO - Agent saved
+2024-09-15 18:51:21,373 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:51:27,004 - INFO - Agent saved
+2024-09-15 18:51:27,004 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:51:32,645 - INFO - Agent saved
+2024-09-15 18:51:32,645 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:51:38,291 - INFO - Agent saved
+2024-09-15 18:51:38,291 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:51:43,961 - INFO - Agent saved
+2024-09-15 18:51:43,962 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:51:49,577 - INFO - Agent saved
+2024-09-15 18:51:49,577 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:51:55,231 - INFO - Agent saved
+2024-09-15 18:51:55,231 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:00,896 - INFO - Agent saved
+2024-09-15 18:52:00,896 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:06,571 - INFO - Agent saved
+2024-09-15 18:52:06,571 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:12,212 - INFO - Agent saved
+2024-09-15 18:52:12,212 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:17,867 - INFO - Agent saved
+2024-09-15 18:52:17,867 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:23,507 - INFO - Agent saved
+2024-09-15 18:52:23,507 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:29,179 - INFO - Agent saved
+2024-09-15 18:52:29,179 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:34,864 - INFO - Agent saved
+2024-09-15 18:52:34,864 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:40,540 - INFO - Agent saved
+2024-09-15 18:52:40,540 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:46,239 - INFO - Agent saved
+2024-09-15 18:52:46,239 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:51,923 - INFO - Agent saved
+2024-09-15 18:52:51,923 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:52:57,594 - INFO - Agent saved
+2024-09-15 18:52:57,594 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:53:03,235 - INFO - Agent saved
+2024-09-15 18:53:03,236 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:53:08,571 - INFO - Agent saved
+2024-09-15 18:53:08,571 - INFO - Game Over. Distance: 936.00, Best Reward: 0.00
+2024-09-15 18:53:14,215 - INFO - Agent saved
+2024-09-15 18:53:14,215 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:53:19,898 - INFO - Agent saved
+2024-09-15 18:53:19,898 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:53:25,561 - INFO - Agent saved
+2024-09-15 18:53:25,561 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:53:31,171 - INFO - Agent saved
+2024-09-15 18:53:31,172 - INFO - Game Over. Distance: 990.00, Best Reward: 0.00
+2024-09-15 18:53:36,849 - INFO - Agent saved
+2024-09-15 18:53:36,849 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:53:42,531 - INFO - Agent saved
+2024-09-15 18:53:42,531 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:53:47,538 - INFO - Agent saved
+2024-09-15 18:53:47,539 - INFO - Game Over. Distance: 873.00, Best Reward: 0.00
+2024-09-15 18:53:53,212 - INFO - Agent saved
+2024-09-15 18:53:53,213 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:53:58,890 - INFO - Agent saved
+2024-09-15 18:53:58,891 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:54:04,618 - INFO - Agent saved
+2024-09-15 18:54:04,618 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:54:10,359 - INFO - Agent saved
+2024-09-15 18:54:10,359 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:54:16,078 - INFO - Agent saved
+2024-09-15 18:54:16,078 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:54:21,523 - INFO - Agent saved
+2024-09-15 18:54:21,523 - INFO - Game Over. Distance: 945.00, Best Reward: 0.00
+2024-09-15 18:54:27,253 - INFO - Agent saved
+2024-09-15 18:54:27,253 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:54:32,983 - INFO - Agent saved
+2024-09-15 18:54:32,983 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:54:38,726 - INFO - Agent saved
+2024-09-15 18:54:38,727 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:54:44,557 - INFO - Agent saved
+2024-09-15 18:54:44,557 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:54:50,316 - INFO - Agent saved
+2024-09-15 18:54:50,316 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:54:56,220 - INFO - Agent saved
+2024-09-15 18:54:56,221 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:02,127 - INFO - Agent saved
+2024-09-15 18:55:02,127 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:08,236 - INFO - Agent saved
+2024-09-15 18:55:08,236 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:14,053 - INFO - Agent saved
+2024-09-15 18:55:14,054 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:19,837 - INFO - Agent saved
+2024-09-15 18:55:19,838 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:25,619 - INFO - Agent saved
+2024-09-15 18:55:25,619 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:31,746 - INFO - Agent saved
+2024-09-15 18:55:31,746 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:37,546 - INFO - Agent saved
+2024-09-15 18:55:37,546 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:43,418 - INFO - Agent saved
+2024-09-15 18:55:43,418 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:49,222 - INFO - Agent saved
+2024-09-15 18:55:49,222 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:55:55,060 - INFO - Agent saved
+2024-09-15 18:55:55,060 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:00,894 - INFO - Agent saved
+2024-09-15 18:56:00,895 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:06,700 - INFO - Agent saved
+2024-09-15 18:56:06,700 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:12,400 - INFO - Agent saved
+2024-09-15 18:56:12,400 - INFO - Game Over. Distance: 993.00, Best Reward: 0.00
+2024-09-15 18:56:18,178 - INFO - Agent saved
+2024-09-15 18:56:18,178 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:23,910 - INFO - Agent saved
+2024-09-15 18:56:23,910 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:29,770 - INFO - Agent saved
+2024-09-15 18:56:29,771 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:35,570 - INFO - Agent saved
+2024-09-15 18:56:35,571 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:41,315 - INFO - Agent saved
+2024-09-15 18:56:41,315 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:47,074 - INFO - Agent saved
+2024-09-15 18:56:47,075 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:52,782 - INFO - Agent saved
+2024-09-15 18:56:52,783 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:56:58,475 - INFO - Agent saved
+2024-09-15 18:56:58,475 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:57:04,190 - INFO - Agent saved
+2024-09-15 18:57:04,190 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:57:10,172 - INFO - Agent saved
+2024-09-15 18:57:10,172 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:57:15,862 - INFO - Agent saved
+2024-09-15 18:57:15,862 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:57:21,554 - INFO - Agent saved
+2024-09-15 18:57:21,554 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:57:27,298 - INFO - Agent saved
+2024-09-15 18:57:27,298 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:57:32,497 - INFO - Agent saved
+2024-09-15 18:57:32,497 - INFO - Game Over. Distance: 912.00, Best Reward: 0.00
+2024-09-15 18:57:38,251 - INFO - Agent saved
+2024-09-15 18:57:38,252 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:57:43,953 - INFO - Agent saved
+2024-09-15 18:57:43,953 - INFO - Game Over. Distance: 996.00, Best Reward: 0.00
+2024-09-15 18:57:49,660 - INFO - Agent saved
+2024-09-15 18:57:49,660 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:57:55,480 - INFO - Agent saved
+2024-09-15 18:57:55,480 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:01,152 - INFO - Agent saved
+2024-09-15 18:58:01,152 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:06,866 - INFO - Agent saved
+2024-09-15 18:58:06,866 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:12,550 - INFO - Agent saved
+2024-09-15 18:58:12,550 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:18,239 - INFO - Agent saved
+2024-09-15 18:58:18,239 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:23,505 - INFO - Agent saved
+2024-09-15 18:58:23,506 - INFO - Game Over. Distance: 918.00, Best Reward: 0.00
+2024-09-15 18:58:29,238 - INFO - Agent saved
+2024-09-15 18:58:29,238 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:34,967 - INFO - Agent saved
+2024-09-15 18:58:34,968 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:40,978 - INFO - Agent saved
+2024-09-15 18:58:40,978 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:46,742 - INFO - Agent saved
+2024-09-15 18:58:46,742 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:52,486 - INFO - Agent saved
+2024-09-15 18:58:52,487 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:58:58,206 - INFO - Agent saved
+2024-09-15 18:58:58,207 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:03,977 - INFO - Agent saved
+2024-09-15 18:59:03,977 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:09,734 - INFO - Agent saved
+2024-09-15 18:59:09,735 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:15,585 - INFO - Agent saved
+2024-09-15 18:59:15,586 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:21,343 - INFO - Agent saved
+2024-09-15 18:59:21,343 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:27,095 - INFO - Agent saved
+2024-09-15 18:59:27,096 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:32,864 - INFO - Agent saved
+2024-09-15 18:59:32,864 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:38,683 - INFO - Agent saved
+2024-09-15 18:59:38,684 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:44,850 - INFO - Agent saved
+2024-09-15 18:59:44,851 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:50,654 - INFO - Agent saved
+2024-09-15 18:59:50,654 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 18:59:56,529 - INFO - Agent saved
+2024-09-15 18:59:56,529 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:00:02,429 - INFO - Agent saved
+2024-09-15 19:00:02,430 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:00:08,231 - INFO - Agent saved
+2024-09-15 19:00:08,231 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:00:14,399 - INFO - Agent saved
+2024-09-15 19:00:14,400 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:00:20,177 - INFO - Agent saved
+2024-09-15 19:00:20,177 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:00:25,976 - INFO - Agent saved
+2024-09-15 19:00:25,976 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:00:31,735 - INFO - Agent saved
+2024-09-15 19:00:31,735 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:00:37,184 - INFO - Agent saved
+2024-09-15 19:00:37,184 - INFO - Game Over. Distance: 942.00, Best Reward: 0.00
+2024-09-15 19:00:42,987 - INFO - Agent saved
+2024-09-15 19:00:42,988 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:00:48,760 - INFO - Agent saved
+2024-09-15 19:00:48,760 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:00:54,515 - INFO - Agent saved
+2024-09-15 19:00:54,515 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:00,309 - INFO - Agent saved
+2024-09-15 19:01:00,309 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:06,046 - INFO - Agent saved
+2024-09-15 19:01:06,046 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:11,817 - INFO - Agent saved
+2024-09-15 19:01:11,817 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:17,553 - INFO - Agent saved
+2024-09-15 19:01:17,553 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:23,297 - INFO - Agent saved
+2024-09-15 19:01:23,297 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:29,033 - INFO - Agent saved
+2024-09-15 19:01:29,033 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:34,806 - INFO - Agent saved
+2024-09-15 19:01:34,807 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:40,515 - INFO - Agent saved
+2024-09-15 19:01:40,515 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:46,295 - INFO - Agent saved
+2024-09-15 19:01:46,296 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:52,056 - INFO - Agent saved
+2024-09-15 19:01:52,057 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:01:57,892 - INFO - Agent saved
+2024-09-15 19:01:57,892 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:03,852 - INFO - Agent saved
+2024-09-15 19:02:03,852 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:09,670 - INFO - Agent saved
+2024-09-15 19:02:09,671 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:15,516 - INFO - Agent saved
+2024-09-15 19:02:15,516 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:21,410 - INFO - Agent saved
+2024-09-15 19:02:21,411 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:27,374 - INFO - Agent saved
+2024-09-15 19:02:27,374 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:33,252 - INFO - Agent saved
+2024-09-15 19:02:33,253 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:39,358 - INFO - Agent saved
+2024-09-15 19:02:39,358 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:45,283 - INFO - Agent saved
+2024-09-15 19:02:45,283 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:51,280 - INFO - Agent saved
+2024-09-15 19:02:51,281 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:02:57,087 - INFO - Agent saved
+2024-09-15 19:02:57,087 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:02,864 - INFO - Agent saved
+2024-09-15 19:03:02,865 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:08,697 - INFO - Agent saved
+2024-09-15 19:03:08,697 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:14,824 - INFO - Agent saved
+2024-09-15 19:03:14,824 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:20,787 - INFO - Agent saved
+2024-09-15 19:03:20,787 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:26,862 - INFO - Agent saved
+2024-09-15 19:03:26,863 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:32,736 - INFO - Agent saved
+2024-09-15 19:03:32,737 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:38,634 - INFO - Agent saved
+2024-09-15 19:03:38,634 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:44,545 - INFO - Agent saved
+2024-09-15 19:03:44,545 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:50,419 - INFO - Agent saved
+2024-09-15 19:03:50,419 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:03:56,319 - INFO - Agent saved
+2024-09-15 19:03:56,320 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:02,130 - INFO - Agent saved
+2024-09-15 19:04:02,130 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:07,928 - INFO - Agent saved
+2024-09-15 19:04:07,929 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:13,713 - INFO - Agent saved
+2024-09-15 19:04:13,713 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:19,489 - INFO - Agent saved
+2024-09-15 19:04:19,490 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:25,306 - INFO - Agent saved
+2024-09-15 19:04:25,306 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:31,041 - INFO - Agent saved
+2024-09-15 19:04:31,042 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:36,759 - INFO - Agent saved
+2024-09-15 19:04:36,759 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:42,464 - INFO - Agent saved
+2024-09-15 19:04:42,465 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:48,165 - INFO - Agent saved
+2024-09-15 19:04:48,165 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:53,819 - INFO - Agent saved
+2024-09-15 19:04:53,819 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:04:59,516 - INFO - Agent saved
+2024-09-15 19:04:59,517 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:05:05,204 - INFO - Agent saved
+2024-09-15 19:05:05,204 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:05:10,908 - INFO - Agent saved
+2024-09-15 19:05:10,908 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:05:16,644 - INFO - Agent saved
+2024-09-15 19:05:16,644 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:05:22,328 - INFO - Agent saved
+2024-09-15 19:05:22,328 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:05:28,001 - INFO - Agent saved
+2024-09-15 19:05:28,001 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:05:33,446 - INFO - Agent saved
+2024-09-15 19:05:33,447 - INFO - Game Over. Distance: 954.00, Best Reward: 0.00
+2024-09-15 19:05:39,102 - INFO - Agent saved
+2024-09-15 19:05:39,102 - INFO - Game Over. Distance: 978.00, Best Reward: 0.00
+2024-09-15 19:05:44,797 - INFO - Agent saved
+2024-09-15 19:05:44,797 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:05:50,457 - INFO - Agent saved
+2024-09-15 19:05:50,457 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:05:56,166 - INFO - Agent saved
+2024-09-15 19:05:56,166 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:01,843 - INFO - Agent saved
+2024-09-15 19:06:01,844 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:07,501 - INFO - Agent saved
+2024-09-15 19:06:07,501 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:13,189 - INFO - Agent saved
+2024-09-15 19:06:13,189 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:18,863 - INFO - Agent saved
+2024-09-15 19:06:18,863 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:24,507 - INFO - Agent saved
+2024-09-15 19:06:24,507 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:30,237 - INFO - Agent saved
+2024-09-15 19:06:30,237 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:35,901 - INFO - Agent saved
+2024-09-15 19:06:35,901 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:41,563 - INFO - Agent saved
+2024-09-15 19:06:41,563 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:47,253 - INFO - Agent saved
+2024-09-15 19:06:47,253 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:52,911 - INFO - Agent saved
+2024-09-15 19:06:52,911 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:06:58,460 - INFO - Agent saved
+2024-09-15 19:06:58,460 - INFO - Game Over. Distance: 981.00, Best Reward: 0.00
+2024-09-15 19:07:04,145 - INFO - Agent saved
+2024-09-15 19:07:04,145 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:07:09,802 - INFO - Agent saved
+2024-09-15 19:07:09,802 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:07:15,505 - INFO - Agent saved
+2024-09-15 19:07:15,505 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:07:21,235 - INFO - Agent saved
+2024-09-15 19:07:21,235 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:07:26,908 - INFO - Agent saved
+2024-09-15 19:07:26,908 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:07:32,571 - INFO - Agent saved
+2024-09-15 19:07:32,572 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:07:38,255 - INFO - Agent saved
+2024-09-15 19:07:38,255 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:07:43,929 - INFO - Agent saved
+2024-09-15 19:07:43,929 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:07:49,608 - INFO - Agent saved
+2024-09-15 19:07:49,608 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:07:55,282 - INFO - Agent saved
+2024-09-15 19:07:55,283 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:00,679 - INFO - Agent saved
+2024-09-15 19:08:00,679 - INFO - Game Over. Distance: 945.00, Best Reward: 0.00
+2024-09-15 19:08:06,355 - INFO - Agent saved
+2024-09-15 19:08:06,355 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:12,099 - INFO - Agent saved
+2024-09-15 19:08:12,099 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:17,786 - INFO - Agent saved
+2024-09-15 19:08:17,786 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:23,504 - INFO - Agent saved
+2024-09-15 19:08:23,504 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:29,207 - INFO - Agent saved
+2024-09-15 19:08:29,208 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:34,946 - INFO - Agent saved
+2024-09-15 19:08:34,947 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:40,720 - INFO - Agent saved
+2024-09-15 19:08:40,721 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:46,473 - INFO - Agent saved
+2024-09-15 19:08:46,473 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:52,179 - INFO - Agent saved
+2024-09-15 19:08:52,179 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:08:57,928 - INFO - Agent saved
+2024-09-15 19:08:57,928 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:03,671 - INFO - Agent saved
+2024-09-15 19:09:03,671 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:09,480 - INFO - Agent saved
+2024-09-15 19:09:09,480 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:15,274 - INFO - Agent saved
+2024-09-15 19:09:15,274 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:21,161 - INFO - Agent saved
+2024-09-15 19:09:21,162 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:26,991 - INFO - Agent saved
+2024-09-15 19:09:26,992 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:33,003 - INFO - Agent saved
+2024-09-15 19:09:33,003 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:38,867 - INFO - Agent saved
+2024-09-15 19:09:38,867 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:45,256 - INFO - Agent saved
+2024-09-15 19:09:45,256 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:51,333 - INFO - Agent saved
+2024-09-15 19:09:51,333 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:09:57,520 - INFO - Agent saved
+2024-09-15 19:09:57,521 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:10:02,900 - INFO - Agent saved
+2024-09-15 19:10:02,900 - INFO - Game Over. Distance: 885.00, Best Reward: 0.00
+2024-09-15 19:10:09,052 - INFO - Agent saved
+2024-09-15 19:10:09,052 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:10:15,422 - INFO - Agent saved
+2024-09-15 19:10:15,422 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:10:21,602 - INFO - Agent saved
+2024-09-15 19:10:21,602 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:10:28,615 - INFO - Agent saved
+2024-09-15 19:10:28,616 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:10:36,655 - INFO - Agent saved
+2024-09-15 19:10:36,655 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:10:43,892 - INFO - Agent saved
+2024-09-15 19:10:43,895 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:10:50,601 - INFO - Agent saved
+2024-09-15 19:10:50,602 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:10:57,054 - INFO - Agent saved
+2024-09-15 19:10:57,055 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:11:03,075 - INFO - Agent saved
+2024-09-15 19:11:03,076 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:11:09,120 - INFO - Agent saved
+2024-09-15 19:11:09,122 - INFO - Game Over. Distance: 921.00, Best Reward: 0.00
+2024-09-15 19:11:15,307 - INFO - Agent saved
+2024-09-15 19:11:15,308 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:11:21,698 - INFO - Agent saved
+2024-09-15 19:11:21,698 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:11:27,711 - INFO - Agent saved
+2024-09-15 19:11:27,711 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:11:33,734 - INFO - Agent saved
+2024-09-15 19:11:33,735 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:11:39,748 - INFO - Agent saved
+2024-09-15 19:11:39,749 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:11:45,989 - INFO - Agent saved
+2024-09-15 19:11:45,990 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:11:52,191 - INFO - Agent saved
+2024-09-15 19:11:52,191 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:11:58,250 - INFO - Agent saved
+2024-09-15 19:11:58,251 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:04,225 - INFO - Agent saved
+2024-09-15 19:12:04,226 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:10,564 - INFO - Agent saved
+2024-09-15 19:12:10,564 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:17,581 - INFO - Agent saved
+2024-09-15 19:12:17,582 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:23,494 - INFO - Agent saved
+2024-09-15 19:12:23,495 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:29,647 - INFO - Agent saved
+2024-09-15 19:12:29,647 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:35,549 - INFO - Agent saved
+2024-09-15 19:12:35,550 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:41,495 - INFO - Agent saved
+2024-09-15 19:12:41,496 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:47,391 - INFO - Agent saved
+2024-09-15 19:12:47,391 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:53,439 - INFO - Agent saved
+2024-09-15 19:12:53,439 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:12:59,391 - INFO - Agent saved
+2024-09-15 19:12:59,391 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:05,297 - INFO - Agent saved
+2024-09-15 19:13:05,297 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:11,241 - INFO - Agent saved
+2024-09-15 19:13:11,241 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:17,164 - INFO - Agent saved
+2024-09-15 19:13:17,164 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:23,769 - INFO - Agent saved
+2024-09-15 19:13:23,769 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:29,748 - INFO - Agent saved
+2024-09-15 19:13:29,749 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:36,282 - INFO - Agent saved
+2024-09-15 19:13:36,282 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:42,163 - INFO - Agent saved
+2024-09-15 19:13:42,164 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:48,004 - INFO - Agent saved
+2024-09-15 19:13:48,004 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:53,849 - INFO - Agent saved
+2024-09-15 19:13:53,849 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:13:59,727 - INFO - Agent saved
+2024-09-15 19:13:59,727 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:05,747 - INFO - Agent saved
+2024-09-15 19:14:05,747 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:11,569 - INFO - Agent saved
+2024-09-15 19:14:11,569 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:17,391 - INFO - Agent saved
+2024-09-15 19:14:17,392 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:23,296 - INFO - Agent saved
+2024-09-15 19:14:23,297 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:29,110 - INFO - Agent saved
+2024-09-15 19:14:29,110 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:34,980 - INFO - Agent saved
+2024-09-15 19:14:34,980 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:40,849 - INFO - Agent saved
+2024-09-15 19:14:40,850 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:46,715 - INFO - Agent saved
+2024-09-15 19:14:46,715 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:52,791 - INFO - Agent saved
+2024-09-15 19:14:52,791 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:14:58,566 - INFO - Agent saved
+2024-09-15 19:14:58,566 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:04,369 - INFO - Agent saved
+2024-09-15 19:15:04,370 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:10,235 - INFO - Agent saved
+2024-09-15 19:15:10,235 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:16,100 - INFO - Agent saved
+2024-09-15 19:15:16,101 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:21,908 - INFO - Agent saved
+2024-09-15 19:15:21,909 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:27,760 - INFO - Agent saved
+2024-09-15 19:15:27,760 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:33,617 - INFO - Agent saved
+2024-09-15 19:15:33,618 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:39,589 - INFO - Agent saved
+2024-09-15 19:15:39,590 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:45,406 - INFO - Agent saved
+2024-09-15 19:15:45,406 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:51,188 - INFO - Agent saved
+2024-09-15 19:15:51,188 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:15:56,980 - INFO - Agent saved
+2024-09-15 19:15:56,980 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:02,885 - INFO - Agent saved
+2024-09-15 19:16:02,885 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:08,713 - INFO - Agent saved
+2024-09-15 19:16:08,714 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:14,739 - INFO - Agent saved
+2024-09-15 19:16:14,740 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:20,603 - INFO - Agent saved
+2024-09-15 19:16:20,603 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:26,405 - INFO - Agent saved
+2024-09-15 19:16:26,405 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:32,188 - INFO - Agent saved
+2024-09-15 19:16:32,188 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:37,967 - INFO - Agent saved
+2024-09-15 19:16:37,967 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:43,726 - INFO - Agent saved
+2024-09-15 19:16:43,727 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:49,543 - INFO - Agent saved
+2024-09-15 19:16:49,543 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:16:55,370 - INFO - Agent saved
+2024-09-15 19:16:55,370 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:01,265 - INFO - Agent saved
+2024-09-15 19:17:01,265 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:07,074 - INFO - Agent saved
+2024-09-15 19:17:07,074 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:12,910 - INFO - Agent saved
+2024-09-15 19:17:12,910 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:18,679 - INFO - Agent saved
+2024-09-15 19:17:18,680 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:24,433 - INFO - Agent saved
+2024-09-15 19:17:24,433 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:30,247 - INFO - Agent saved
+2024-09-15 19:17:30,247 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:36,151 - INFO - Agent saved
+2024-09-15 19:17:36,152 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:41,954 - INFO - Agent saved
+2024-09-15 19:17:41,954 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:47,709 - INFO - Agent saved
+2024-09-15 19:17:47,709 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:17:53,264 - INFO - Agent saved
+2024-09-15 19:17:53,264 - INFO - Game Over. Distance: 963.00, Best Reward: 0.00
+2024-09-15 19:17:59,003 - INFO - Agent saved
+2024-09-15 19:17:59,003 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:18:04,835 - INFO - Agent saved
+2024-09-15 19:18:04,835 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:18:10,600 - INFO - Agent saved
+2024-09-15 19:18:10,600 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:18:16,336 - INFO - Agent saved
+2024-09-15 19:18:16,336 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:18:21,751 - INFO - Agent saved
+2024-09-15 19:18:21,752 - INFO - Game Over. Distance: 909.00, Best Reward: 0.00
+2024-09-15 19:18:27,517 - INFO - Agent saved
+2024-09-15 19:18:27,517 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:18:33,324 - INFO - Agent saved
+2024-09-15 19:18:33,325 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:18:39,101 - INFO - Agent saved
+2024-09-15 19:18:39,101 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:18:44,928 - INFO - Agent saved
+2024-09-15 19:18:44,928 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:18:50,725 - INFO - Agent saved
+2024-09-15 19:18:50,725 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:18:56,575 - INFO - Agent saved
+2024-09-15 19:18:56,575 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:19:02,463 - INFO - Agent saved
+2024-09-15 19:19:02,464 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:19:08,391 - INFO - Agent saved
+2024-09-15 19:19:08,391 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:19:14,199 - INFO - Agent saved
+2024-09-15 19:19:14,199 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:19:20,046 - INFO - Agent saved
+2024-09-15 19:19:20,046 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:19:25,243 - INFO - Agent saved
+2024-09-15 19:19:25,243 - INFO - Game Over. Distance: 861.00, Best Reward: 0.00
+2024-09-15 19:19:31,111 - INFO - Agent saved
+2024-09-15 19:19:31,111 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:19:37,021 - INFO - Agent saved
+2024-09-15 19:19:37,021 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:19:42,830 - INFO - Agent saved
+2024-09-15 19:19:42,830 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:19:48,699 - INFO - Agent saved
+2024-09-15 19:19:48,700 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:19:54,539 - INFO - Agent saved
+2024-09-15 19:19:54,540 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:00,343 - INFO - Agent saved
+2024-09-15 19:20:00,344 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:06,175 - INFO - Agent saved
+2024-09-15 19:20:06,176 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:12,499 - INFO - Agent saved
+2024-09-15 19:20:12,499 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:18,402 - INFO - Agent saved
+2024-09-15 19:20:18,403 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:24,504 - INFO - Agent saved
+2024-09-15 19:20:24,504 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:30,386 - INFO - Agent saved
+2024-09-15 19:20:30,386 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:36,372 - INFO - Agent saved
+2024-09-15 19:20:36,372 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:42,331 - INFO - Agent saved
+2024-09-15 19:20:42,331 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:48,334 - INFO - Agent saved
+2024-09-15 19:20:48,335 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:20:54,634 - INFO - Agent saved
+2024-09-15 19:20:54,635 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:21:01,098 - INFO - Agent saved
+2024-09-15 19:21:01,099 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:21:07,232 - INFO - Agent saved
+2024-09-15 19:21:07,232 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:21:14,207 - INFO - Agent saved
+2024-09-15 19:21:14,207 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:21:20,513 - INFO - Agent saved
+2024-09-15 19:21:20,513 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:21:26,155 - INFO - Agent saved
+2024-09-15 19:21:26,155 - INFO - Game Over. Distance: 921.00, Best Reward: 0.00
+2024-09-15 19:21:32,169 - INFO - Agent saved
+2024-09-15 19:21:32,169 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:21:38,316 - INFO - Agent saved
+2024-09-15 19:21:38,316 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:21:44,436 - INFO - Agent saved
+2024-09-15 19:21:44,436 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:21:50,577 - INFO - Agent saved
+2024-09-15 19:21:50,578 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:21:56,691 - INFO - Agent saved
+2024-09-15 19:21:56,692 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:02,972 - INFO - Agent saved
+2024-09-15 19:22:02,972 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:09,016 - INFO - Agent saved
+2024-09-15 19:22:09,016 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:15,080 - INFO - Agent saved
+2024-09-15 19:22:15,080 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:21,145 - INFO - Agent saved
+2024-09-15 19:22:21,146 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:27,141 - INFO - Agent saved
+2024-09-15 19:22:27,142 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:33,597 - INFO - Agent saved
+2024-09-15 19:22:33,598 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:39,616 - INFO - Agent saved
+2024-09-15 19:22:39,617 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:45,755 - INFO - Agent saved
+2024-09-15 19:22:45,756 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:52,219 - INFO - Agent saved
+2024-09-15 19:22:52,220 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:22:58,394 - INFO - Agent saved
+2024-09-15 19:22:58,395 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:23:04,365 - INFO - Agent saved
+2024-09-15 19:23:04,365 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:23:10,482 - INFO - Agent saved
+2024-09-15 19:23:10,483 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:23:16,495 - INFO - Agent saved
+2024-09-15 19:23:16,495 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:23:23,050 - INFO - Agent saved
+2024-09-15 19:23:23,051 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:23:29,618 - INFO - Agent saved
+2024-09-15 19:23:29,619 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:23:35,743 - INFO - Agent saved
+2024-09-15 19:23:35,744 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:23:42,821 - INFO - Agent saved
+2024-09-15 19:23:42,822 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:23:49,080 - INFO - Agent saved
+2024-09-15 19:23:49,082 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:23:55,169 - INFO - Agent saved
+2024-09-15 19:23:55,169 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:01,421 - INFO - Agent saved
+2024-09-15 19:24:01,421 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:07,513 - INFO - Agent saved
+2024-09-15 19:24:07,513 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:14,001 - INFO - Agent saved
+2024-09-15 19:24:14,001 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:20,010 - INFO - Agent saved
+2024-09-15 19:24:20,011 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:26,083 - INFO - Agent saved
+2024-09-15 19:24:26,083 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:32,110 - INFO - Agent saved
+2024-09-15 19:24:32,110 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:38,240 - INFO - Agent saved
+2024-09-15 19:24:38,241 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:44,400 - INFO - Agent saved
+2024-09-15 19:24:44,401 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:51,129 - INFO - Agent saved
+2024-09-15 19:24:51,130 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:24:57,254 - INFO - Agent saved
+2024-09-15 19:24:57,254 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:25:03,375 - INFO - Agent saved
+2024-09-15 19:25:03,376 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:25:09,548 - INFO - Agent saved
+2024-09-15 19:25:09,548 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:25:15,450 - INFO - Agent saved
+2024-09-15 19:25:15,451 - INFO - Game Over. Distance: 870.00, Best Reward: 0.00
+2024-09-15 19:25:21,513 - INFO - Agent saved
+2024-09-15 19:25:21,513 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:25:27,786 - INFO - Agent saved
+2024-09-15 19:25:27,786 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:25:33,325 - INFO - Agent saved
+2024-09-15 19:25:33,326 - INFO - Game Over. Distance: 876.00, Best Reward: 0.00
+2024-09-15 19:25:39,493 - INFO - Agent saved
+2024-09-15 19:25:39,494 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:25:45,751 - INFO - Agent saved
+2024-09-15 19:25:45,752 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:25:52,562 - INFO - Agent saved
+2024-09-15 19:25:52,563 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:25:59,319 - INFO - Agent saved
+2024-09-15 19:25:59,320 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:26:06,836 - INFO - Agent saved
+2024-09-15 19:26:06,837 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:26:13,076 - INFO - Agent saved
+2024-09-15 19:26:13,076 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:26:19,602 - INFO - Agent saved
+2024-09-15 19:26:19,603 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:26:26,099 - INFO - Agent saved
+2024-09-15 19:26:26,099 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:26:32,304 - INFO - Agent saved
+2024-09-15 19:26:32,305 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:26:38,482 - INFO - Agent saved
+2024-09-15 19:26:38,482 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:26:44,545 - INFO - Agent saved
+2024-09-15 19:26:44,546 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:26:51,348 - INFO - Agent saved
+2024-09-15 19:26:51,349 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:26:57,926 - INFO - Agent saved
+2024-09-15 19:26:57,927 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:27:04,172 - INFO - Agent saved
+2024-09-15 19:27:04,173 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:27:10,330 - INFO - Agent saved
+2024-09-15 19:27:10,331 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:27:16,518 - INFO - Agent saved
+2024-09-15 19:27:16,520 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:27:22,804 - INFO - Agent saved
+2024-09-15 19:27:22,804 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:27:28,856 - INFO - Agent saved
+2024-09-15 19:27:28,857 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:27:34,906 - INFO - Agent saved
+2024-09-15 19:27:34,906 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:27:40,983 - INFO - Agent saved
+2024-09-15 19:27:40,984 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:27:47,070 - INFO - Agent saved
+2024-09-15 19:27:47,070 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:27:53,160 - INFO - Agent saved
+2024-09-15 19:27:53,160 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:28:01,251 - INFO - Agent saved
+2024-09-15 19:28:01,253 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:28:07,516 - INFO - Agent saved
+2024-09-15 19:28:07,517 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:28:14,919 - INFO - Agent saved
+2024-09-15 19:28:14,920 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:28:21,285 - INFO - Agent saved
+2024-09-15 19:28:21,286 - INFO - Game Over. Distance: 882.00, Best Reward: 0.00
+2024-09-15 19:28:28,172 - INFO - Agent saved
+2024-09-15 19:28:28,173 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:28:34,535 - INFO - Agent saved
+2024-09-15 19:28:34,535 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:28:42,512 - INFO - Agent saved
+2024-09-15 19:28:42,513 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:28:48,746 - INFO - Agent saved
+2024-09-15 19:28:48,747 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:28:54,871 - INFO - Agent saved
+2024-09-15 19:28:54,872 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:00,898 - INFO - Agent saved
+2024-09-15 19:29:00,899 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:07,010 - INFO - Agent saved
+2024-09-15 19:29:07,011 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:13,041 - INFO - Agent saved
+2024-09-15 19:29:13,042 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:19,222 - INFO - Agent saved
+2024-09-15 19:29:19,222 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:25,196 - INFO - Agent saved
+2024-09-15 19:29:25,196 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:31,142 - INFO - Agent saved
+2024-09-15 19:29:31,142 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:37,257 - INFO - Agent saved
+2024-09-15 19:29:37,257 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:43,259 - INFO - Agent saved
+2024-09-15 19:29:43,260 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:49,428 - INFO - Agent saved
+2024-09-15 19:29:49,429 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:29:55,581 - INFO - Agent saved
+2024-09-15 19:29:55,582 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:30:02,438 - INFO - Agent saved
+2024-09-15 19:30:02,439 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:30:08,850 - INFO - Agent saved
+2024-09-15 19:30:08,851 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:30:15,502 - INFO - Agent saved
+2024-09-15 19:30:15,502 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:30:22,357 - INFO - Agent saved
+2024-09-15 19:30:22,358 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:30:29,479 - INFO - Agent saved
+2024-09-15 19:30:29,480 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:30:35,986 - INFO - Agent saved
+2024-09-15 19:30:35,987 - INFO - Game Over. Distance: 996.00, Best Reward: 0.00
+2024-09-15 19:30:42,151 - INFO - Agent saved
+2024-09-15 19:30:42,151 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:30:48,326 - INFO - Agent saved
+2024-09-15 19:30:48,326 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:30:54,669 - INFO - Agent saved
+2024-09-15 19:30:54,669 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:31:01,584 - INFO - Agent saved
+2024-09-15 19:31:01,585 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:31:08,485 - INFO - Agent saved
+2024-09-15 19:31:08,486 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:31:15,071 - INFO - Agent saved
+2024-09-15 19:31:15,073 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:31:21,510 - INFO - Agent saved
+2024-09-15 19:31:21,510 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:31:29,205 - INFO - Agent saved
+2024-09-15 19:31:29,206 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:31:35,905 - INFO - Agent saved
+2024-09-15 19:31:35,905 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:31:42,152 - INFO - Agent saved
+2024-09-15 19:31:42,153 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:31:48,600 - INFO - Agent saved
+2024-09-15 19:31:48,600 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:31:54,813 - INFO - Agent saved
+2024-09-15 19:31:54,813 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:32:01,720 - INFO - Agent saved
+2024-09-15 19:32:01,721 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:32:08,608 - INFO - Agent saved
+2024-09-15 19:32:08,609 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:32:15,721 - INFO - Agent saved
+2024-09-15 19:32:15,722 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:32:21,918 - INFO - Agent saved
+2024-09-15 19:32:21,918 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:32:28,232 - INFO - Agent saved
+2024-09-15 19:32:28,232 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:32:35,687 - INFO - Agent saved
+2024-09-15 19:32:35,688 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:32:42,090 - INFO - Agent saved
+2024-09-15 19:32:42,091 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:32:48,322 - INFO - Agent saved
+2024-09-15 19:32:48,322 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:32:54,838 - INFO - Agent saved
+2024-09-15 19:32:54,839 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:33:01,133 - INFO - Agent saved
+2024-09-15 19:33:01,133 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:33:07,326 - INFO - Agent saved
+2024-09-15 19:33:07,327 - INFO - Game Over. Distance: 987.00, Best Reward: 0.00
+2024-09-15 19:33:13,568 - INFO - Agent saved
+2024-09-15 19:33:13,568 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:33:19,896 - INFO - Agent saved
+2024-09-15 19:33:19,897 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:33:27,390 - INFO - Agent saved
+2024-09-15 19:33:27,391 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:33:33,882 - INFO - Agent saved
+2024-09-15 19:33:33,883 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:33:39,786 - INFO - Agent saved
+2024-09-15 19:33:39,787 - INFO - Game Over. Distance: 936.00, Best Reward: 0.00
+2024-09-15 19:33:46,279 - INFO - Agent saved
+2024-09-15 19:33:46,280 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:33:53,164 - INFO - Agent saved
+2024-09-15 19:33:53,166 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:33:59,701 - INFO - Agent saved
+2024-09-15 19:33:59,701 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:34:06,014 - INFO - Agent saved
+2024-09-15 19:34:06,015 - INFO - Game Over. Distance: 945.00, Best Reward: 0.00
+2024-09-15 19:34:14,093 - INFO - Agent saved
+2024-09-15 19:34:14,094 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:34:22,894 - INFO - Agent saved
+2024-09-15 19:34:22,894 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:34:29,788 - INFO - Agent saved
+2024-09-15 19:34:29,788 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:34:36,610 - INFO - Agent saved
+2024-09-15 19:34:36,611 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:34:44,047 - INFO - Agent saved
+2024-09-15 19:34:44,048 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:34:50,564 - INFO - Agent saved
+2024-09-15 19:34:50,564 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:34:57,158 - INFO - Agent saved
+2024-09-15 19:34:57,158 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:35:02,985 - INFO - Agent saved
+2024-09-15 19:35:02,986 - INFO - Game Over. Distance: 873.00, Best Reward: 0.00
+2024-09-15 19:35:09,805 - INFO - Agent saved
+2024-09-15 19:35:09,806 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:35:16,594 - INFO - Agent saved
+2024-09-15 19:35:16,594 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:35:23,107 - INFO - Agent saved
+2024-09-15 19:35:23,107 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:35:30,425 - INFO - Agent saved
+2024-09-15 19:35:30,425 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:35:36,875 - INFO - Agent saved
+2024-09-15 19:35:36,875 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:35:43,594 - INFO - Agent saved
+2024-09-15 19:35:43,595 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:35:50,467 - INFO - Agent saved
+2024-09-15 19:35:50,468 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:35:56,875 - INFO - Agent saved
+2024-09-15 19:35:56,875 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:36:03,448 - INFO - Agent saved
+2024-09-15 19:36:03,449 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:36:09,661 - INFO - Agent saved
+2024-09-15 19:36:09,662 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:36:16,242 - INFO - Agent saved
+2024-09-15 19:36:16,242 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:36:22,467 - INFO - Agent saved
+2024-09-15 19:36:22,467 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:36:28,584 - INFO - Agent saved
+2024-09-15 19:36:28,585 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:36:35,224 - INFO - Agent saved
+2024-09-15 19:36:35,225 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:36:42,136 - INFO - Agent saved
+2024-09-15 19:36:42,137 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:36:48,447 - INFO - Agent saved
+2024-09-15 19:36:48,447 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:36:54,920 - INFO - Agent saved
+2024-09-15 19:36:54,920 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:37:01,757 - INFO - Agent saved
+2024-09-15 19:37:01,757 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:37:08,277 - INFO - Agent saved
+2024-09-15 19:37:08,277 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:37:14,382 - INFO - Agent saved
+2024-09-15 19:37:14,383 - INFO - Game Over. Distance: 945.00, Best Reward: 0.00
+2024-09-15 19:37:20,495 - INFO - Agent saved
+2024-09-15 19:37:20,495 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:37:27,025 - INFO - Agent saved
+2024-09-15 19:37:27,026 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:37:33,319 - INFO - Agent saved
+2024-09-15 19:37:33,320 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:37:40,407 - INFO - Agent saved
+2024-09-15 19:37:40,407 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:37:46,985 - INFO - Agent saved
+2024-09-15 19:37:46,986 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:37:54,940 - INFO - Agent saved
+2024-09-15 19:37:54,941 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:01,738 - INFO - Agent saved
+2024-09-15 19:38:01,738 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:08,275 - INFO - Agent saved
+2024-09-15 19:38:08,276 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:14,336 - INFO - Agent saved
+2024-09-15 19:38:14,337 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:20,560 - INFO - Agent saved
+2024-09-15 19:38:20,560 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:26,775 - INFO - Agent saved
+2024-09-15 19:38:26,775 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:33,410 - INFO - Agent saved
+2024-09-15 19:38:33,410 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:39,818 - INFO - Agent saved
+2024-09-15 19:38:39,819 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:46,198 - INFO - Agent saved
+2024-09-15 19:38:46,199 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:52,603 - INFO - Agent saved
+2024-09-15 19:38:52,604 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:38:58,742 - INFO - Agent saved
+2024-09-15 19:38:58,743 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:39:05,012 - INFO - Agent saved
+2024-09-15 19:39:05,012 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:39:11,443 - INFO - Agent saved
+2024-09-15 19:39:11,443 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:39:18,265 - INFO - Agent saved
+2024-09-15 19:39:18,266 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:39:24,731 - INFO - Agent saved
+2024-09-15 19:39:24,732 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:39:32,344 - INFO - Agent saved
+2024-09-15 19:39:32,345 - INFO - Game Over. Distance: 993.00, Best Reward: 0.00
+2024-09-15 19:39:38,982 - INFO - Agent saved
+2024-09-15 19:39:38,984 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:39:45,153 - INFO - Agent saved
+2024-09-15 19:39:45,153 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:39:51,349 - INFO - Agent saved
+2024-09-15 19:39:51,350 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:39:57,585 - INFO - Agent saved
+2024-09-15 19:39:57,586 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:40:03,861 - INFO - Agent saved
+2024-09-15 19:40:03,861 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:40:09,951 - INFO - Agent saved
+2024-09-15 19:40:09,952 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:40:16,164 - INFO - Agent saved
+2024-09-15 19:40:16,164 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:40:22,601 - INFO - Agent saved
+2024-09-15 19:40:22,602 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:40:29,445 - INFO - Agent saved
+2024-09-15 19:40:29,446 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:40:38,743 - INFO - Agent saved
+2024-09-15 19:40:38,744 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:40:47,129 - INFO - Agent saved
+2024-09-15 19:40:47,130 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:40:53,393 - INFO - Agent saved
+2024-09-15 19:40:53,394 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:40:59,945 - INFO - Agent saved
+2024-09-15 19:40:59,946 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:41:06,211 - INFO - Agent saved
+2024-09-15 19:41:06,212 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:41:12,632 - INFO - Agent saved
+2024-09-15 19:41:12,633 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:41:18,869 - INFO - Agent saved
+2024-09-15 19:41:18,869 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:41:25,351 - INFO - Agent saved
+2024-09-15 19:41:25,351 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:41:32,062 - INFO - Agent saved
+2024-09-15 19:41:32,062 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:41:39,709 - INFO - Agent saved
+2024-09-15 19:41:39,709 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:41:48,046 - INFO - Agent saved
+2024-09-15 19:41:48,046 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:41:54,518 - INFO - Agent saved
+2024-09-15 19:41:54,518 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:42:01,686 - INFO - Agent saved
+2024-09-15 19:42:01,686 - INFO - Game Over. Distance: 921.00, Best Reward: 0.00
+2024-09-15 19:42:08,280 - INFO - Agent saved
+2024-09-15 19:42:08,280 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:42:14,980 - INFO - Agent saved
+2024-09-15 19:42:14,980 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:42:22,007 - INFO - Agent saved
+2024-09-15 19:42:22,008 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:42:29,058 - INFO - Agent saved
+2024-09-15 19:42:29,058 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:42:36,305 - INFO - Agent saved
+2024-09-15 19:42:36,305 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:42:44,246 - INFO - Agent saved
+2024-09-15 19:42:44,246 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:42:51,496 - INFO - Agent saved
+2024-09-15 19:42:51,496 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:42:58,458 - INFO - Agent saved
+2024-09-15 19:42:58,459 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:43:04,288 - INFO - Agent saved
+2024-09-15 19:43:04,289 - INFO - Game Over. Distance: 894.00, Best Reward: 0.00
+2024-09-15 19:43:10,477 - INFO - Agent saved
+2024-09-15 19:43:10,477 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:43:16,615 - INFO - Agent saved
+2024-09-15 19:43:16,615 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:43:23,456 - INFO - Agent saved
+2024-09-15 19:43:23,456 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:43:29,667 - INFO - Agent saved
+2024-09-15 19:43:29,668 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:43:36,158 - INFO - Agent saved
+2024-09-15 19:43:36,159 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:43:42,266 - INFO - Agent saved
+2024-09-15 19:43:42,266 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:43:48,666 - INFO - Agent saved
+2024-09-15 19:43:48,667 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:43:55,723 - INFO - Agent saved
+2024-09-15 19:43:55,724 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:44:02,144 - INFO - Agent saved
+2024-09-15 19:44:02,144 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:44:08,757 - INFO - Agent saved
+2024-09-15 19:44:08,757 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:44:15,522 - INFO - Agent saved
+2024-09-15 19:44:15,522 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:44:22,022 - INFO - Agent saved
+2024-09-15 19:44:22,022 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:44:28,150 - INFO - Agent saved
+2024-09-15 19:44:28,151 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:44:34,826 - INFO - Agent saved
+2024-09-15 19:44:34,826 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:44:41,635 - INFO - Agent saved
+2024-09-15 19:44:41,635 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:44:48,324 - INFO - Agent saved
+2024-09-15 19:44:48,324 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:44:54,680 - INFO - Agent saved
+2024-09-15 19:44:54,680 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:45:01,337 - INFO - Agent saved
+2024-09-15 19:45:01,337 - INFO - Game Over. Distance: 924.00, Best Reward: 0.00
+2024-09-15 19:45:09,535 - INFO - Agent saved
+2024-09-15 19:45:09,536 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:45:17,379 - INFO - Agent saved
+2024-09-15 19:45:17,381 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:45:24,193 - INFO - Agent saved
+2024-09-15 19:45:24,194 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:45:30,711 - INFO - Agent saved
+2024-09-15 19:45:30,711 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:45:37,024 - INFO - Agent saved
+2024-09-15 19:45:37,024 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:45:43,343 - INFO - Agent saved
+2024-09-15 19:45:43,343 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:45:50,163 - INFO - Agent saved
+2024-09-15 19:45:50,163 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:45:57,434 - INFO - Agent saved
+2024-09-15 19:45:57,435 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:46:03,595 - INFO - Agent saved
+2024-09-15 19:46:03,596 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:46:10,234 - INFO - Agent saved
+2024-09-15 19:46:10,234 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:46:17,441 - INFO - Agent saved
+2024-09-15 19:46:17,442 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:46:23,656 - INFO - Agent saved
+2024-09-15 19:46:23,656 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:46:29,946 - INFO - Agent saved
+2024-09-15 19:46:29,946 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:46:37,543 - INFO - Agent saved
+2024-09-15 19:46:37,544 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:46:45,217 - INFO - Agent saved
+2024-09-15 19:46:45,218 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:46:51,616 - INFO - Agent saved
+2024-09-15 19:46:51,616 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:46:57,944 - INFO - Agent saved
+2024-09-15 19:46:57,944 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:47:04,219 - INFO - Agent saved
+2024-09-15 19:47:04,219 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:47:10,849 - INFO - Agent saved
+2024-09-15 19:47:10,850 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:47:19,016 - INFO - Agent saved
+2024-09-15 19:47:19,016 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:47:25,616 - INFO - Agent saved
+2024-09-15 19:47:25,616 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:47:32,232 - INFO - Agent saved
+2024-09-15 19:47:32,232 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:47:39,841 - INFO - Agent saved
+2024-09-15 19:47:39,842 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:47:46,050 - INFO - Agent saved
+2024-09-15 19:47:46,051 - INFO - Game Over. Distance: 906.00, Best Reward: 0.00
+2024-09-15 19:47:52,650 - INFO - Agent saved
+2024-09-15 19:47:52,651 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:47:59,084 - INFO - Agent saved
+2024-09-15 19:47:59,085 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:48:05,224 - INFO - Agent saved
+2024-09-15 19:48:05,225 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:48:11,376 - INFO - Agent saved
+2024-09-15 19:48:11,376 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:48:17,506 - INFO - Agent saved
+2024-09-15 19:48:17,506 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:48:23,244 - INFO - Agent saved
+2024-09-15 19:48:23,244 - INFO - Game Over. Distance: 948.00, Best Reward: 0.00
+2024-09-15 19:48:29,216 - INFO - Agent saved
+2024-09-15 19:48:29,217 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:48:35,260 - INFO - Agent saved
+2024-09-15 19:48:35,261 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:48:41,151 - INFO - Agent saved
+2024-09-15 19:48:41,151 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:48:47,028 - INFO - Agent saved
+2024-09-15 19:48:47,029 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:48:52,240 - INFO - Agent saved
+2024-09-15 19:48:52,240 - INFO - Game Over. Distance: 888.00, Best Reward: 0.00
+2024-09-15 19:48:58,048 - INFO - Agent saved
+2024-09-15 19:48:58,048 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:03,843 - INFO - Agent saved
+2024-09-15 19:49:03,843 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:09,599 - INFO - Agent saved
+2024-09-15 19:49:09,599 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:15,409 - INFO - Agent saved
+2024-09-15 19:49:15,409 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:21,137 - INFO - Agent saved
+2024-09-15 19:49:21,137 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:26,871 - INFO - Agent saved
+2024-09-15 19:49:26,871 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:32,545 - INFO - Agent saved
+2024-09-15 19:49:32,546 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:38,237 - INFO - Agent saved
+2024-09-15 19:49:38,237 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:43,932 - INFO - Agent saved
+2024-09-15 19:49:43,932 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:49,625 - INFO - Agent saved
+2024-09-15 19:49:49,625 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:49:55,359 - INFO - Agent saved
+2024-09-15 19:49:55,359 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:01,052 - INFO - Agent saved
+2024-09-15 19:50:01,052 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:06,765 - INFO - Agent saved
+2024-09-15 19:50:06,766 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:12,460 - INFO - Agent saved
+2024-09-15 19:50:12,460 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:18,172 - INFO - Agent saved
+2024-09-15 19:50:18,172 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:23,879 - INFO - Agent saved
+2024-09-15 19:50:23,879 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:29,618 - INFO - Agent saved
+2024-09-15 19:50:29,618 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:35,310 - INFO - Agent saved
+2024-09-15 19:50:35,310 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:41,009 - INFO - Agent saved
+2024-09-15 19:50:41,009 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:46,708 - INFO - Agent saved
+2024-09-15 19:50:46,708 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:50:52,298 - INFO - Agent saved
+2024-09-15 19:50:52,298 - INFO - Game Over. Distance: 981.00, Best Reward: 0.00
+2024-09-15 19:50:57,999 - INFO - Agent saved
+2024-09-15 19:50:57,999 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:03,708 - INFO - Agent saved
+2024-09-15 19:51:03,708 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:09,459 - INFO - Agent saved
+2024-09-15 19:51:09,459 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:15,166 - INFO - Agent saved
+2024-09-15 19:51:15,166 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:20,851 - INFO - Agent saved
+2024-09-15 19:51:20,851 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:26,548 - INFO - Agent saved
+2024-09-15 19:51:26,549 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:32,255 - INFO - Agent saved
+2024-09-15 19:51:32,255 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:37,950 - INFO - Agent saved
+2024-09-15 19:51:37,950 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:43,682 - INFO - Agent saved
+2024-09-15 19:51:43,683 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:49,380 - INFO - Agent saved
+2024-09-15 19:51:49,380 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:51:55,092 - INFO - Agent saved
+2024-09-15 19:51:55,092 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:00,782 - INFO - Agent saved
+2024-09-15 19:52:00,782 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:06,464 - INFO - Agent saved
+2024-09-15 19:52:06,465 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:12,167 - INFO - Agent saved
+2024-09-15 19:52:12,167 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:17,908 - INFO - Agent saved
+2024-09-15 19:52:17,908 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:23,601 - INFO - Agent saved
+2024-09-15 19:52:23,601 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:29,314 - INFO - Agent saved
+2024-09-15 19:52:29,314 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:35,021 - INFO - Agent saved
+2024-09-15 19:52:35,021 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:40,726 - INFO - Agent saved
+2024-09-15 19:52:40,726 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:46,426 - INFO - Agent saved
+2024-09-15 19:52:46,426 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:52,167 - INFO - Agent saved
+2024-09-15 19:52:52,167 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:52:57,881 - INFO - Agent saved
+2024-09-15 19:52:57,881 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:03,701 - INFO - Agent saved
+2024-09-15 19:53:03,701 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:09,573 - INFO - Agent saved
+2024-09-15 19:53:09,573 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:15,443 - INFO - Agent saved
+2024-09-15 19:53:15,444 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:21,349 - INFO - Agent saved
+2024-09-15 19:53:21,349 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:27,285 - INFO - Agent saved
+2024-09-15 19:53:27,285 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:33,168 - INFO - Agent saved
+2024-09-15 19:53:33,169 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:39,033 - INFO - Agent saved
+2024-09-15 19:53:39,033 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:44,922 - INFO - Agent saved
+2024-09-15 19:53:44,922 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:50,813 - INFO - Agent saved
+2024-09-15 19:53:50,813 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:53:56,760 - INFO - Agent saved
+2024-09-15 19:53:56,761 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:54:02,650 - INFO - Agent saved
+2024-09-15 19:54:02,651 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:54:08,531 - INFO - Agent saved
+2024-09-15 19:54:08,531 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:54:14,386 - INFO - Agent saved
+2024-09-15 19:54:14,386 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:54:20,287 - INFO - Agent saved
+2024-09-15 19:54:20,287 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:54:26,055 - INFO - Agent saved
+2024-09-15 19:54:26,055 - INFO - Game Over. Distance: 981.00, Best Reward: 0.00
+2024-09-15 19:54:31,945 - INFO - Agent saved
+2024-09-15 19:54:31,945 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:54:37,805 - INFO - Agent saved
+2024-09-15 19:54:37,805 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:54:43,667 - INFO - Agent saved
+2024-09-15 19:54:43,667 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:54:49,555 - INFO - Agent saved
+2024-09-15 19:54:49,555 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:54:55,431 - INFO - Agent saved
+2024-09-15 19:54:55,431 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:01,298 - INFO - Agent saved
+2024-09-15 19:55:01,298 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:07,217 - INFO - Agent saved
+2024-09-15 19:55:07,217 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:13,124 - INFO - Agent saved
+2024-09-15 19:55:13,124 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:19,001 - INFO - Agent saved
+2024-09-15 19:55:19,001 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:24,899 - INFO - Agent saved
+2024-09-15 19:55:24,899 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:30,796 - INFO - Agent saved
+2024-09-15 19:55:30,796 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:36,646 - INFO - Agent saved
+2024-09-15 19:55:36,646 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:42,564 - INFO - Agent saved
+2024-09-15 19:55:42,564 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:48,452 - INFO - Agent saved
+2024-09-15 19:55:48,452 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:55:54,320 - INFO - Agent saved
+2024-09-15 19:55:54,320 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:00,201 - INFO - Agent saved
+2024-09-15 19:56:00,201 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:06,090 - INFO - Agent saved
+2024-09-15 19:56:06,090 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:11,979 - INFO - Agent saved
+2024-09-15 19:56:11,979 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:17,879 - INFO - Agent saved
+2024-09-15 19:56:17,879 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:23,765 - INFO - Agent saved
+2024-09-15 19:56:23,765 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:29,669 - INFO - Agent saved
+2024-09-15 19:56:29,669 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:35,579 - INFO - Agent saved
+2024-09-15 19:56:35,579 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:41,471 - INFO - Agent saved
+2024-09-15 19:56:41,472 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:47,400 - INFO - Agent saved
+2024-09-15 19:56:47,400 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:53,297 - INFO - Agent saved
+2024-09-15 19:56:53,297 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:56:59,189 - INFO - Agent saved
+2024-09-15 19:56:59,189 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:57:05,063 - INFO - Agent saved
+2024-09-15 19:57:05,063 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:57:10,953 - INFO - Agent saved
+2024-09-15 19:57:10,953 - INFO - Game Over. Distance: 996.00, Best Reward: 0.00
+2024-09-15 19:57:16,867 - INFO - Agent saved
+2024-09-15 19:57:16,867 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:57:22,783 - INFO - Agent saved
+2024-09-15 19:57:22,783 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:57:28,685 - INFO - Agent saved
+2024-09-15 19:57:28,685 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:57:34,523 - INFO - Agent saved
+2024-09-15 19:57:34,523 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:57:40,370 - INFO - Agent saved
+2024-09-15 19:57:40,370 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:57:46,218 - INFO - Agent saved
+2024-09-15 19:57:46,218 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:57:52,065 - INFO - Agent saved
+2024-09-15 19:57:52,065 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:57:57,621 - INFO - Agent saved
+2024-09-15 19:57:57,621 - INFO - Game Over. Distance: 942.00, Best Reward: 0.00
+2024-09-15 19:58:02,823 - INFO - Agent saved
+2024-09-15 19:58:02,823 - INFO - Game Over. Distance: 888.00, Best Reward: 0.00
+2024-09-15 19:58:08,722 - INFO - Agent saved
+2024-09-15 19:58:08,722 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:58:14,169 - INFO - Agent saved
+2024-09-15 19:58:14,169 - INFO - Game Over. Distance: 921.00, Best Reward: 0.00
+2024-09-15 19:58:20,064 - INFO - Agent saved
+2024-09-15 19:58:20,064 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:58:25,940 - INFO - Agent saved
+2024-09-15 19:58:25,940 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:58:31,838 - INFO - Agent saved
+2024-09-15 19:58:31,838 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:58:37,332 - INFO - Agent saved
+2024-09-15 19:58:37,332 - INFO - Game Over. Distance: 933.00, Best Reward: 0.00
+2024-09-15 19:58:43,223 - INFO - Agent saved
+2024-09-15 19:58:43,223 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:58:49,127 - INFO - Agent saved
+2024-09-15 19:58:49,127 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:58:55,013 - INFO - Agent saved
+2024-09-15 19:58:55,013 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:00,972 - INFO - Agent saved
+2024-09-15 19:59:00,972 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:06,870 - INFO - Agent saved
+2024-09-15 19:59:06,870 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:12,765 - INFO - Agent saved
+2024-09-15 19:59:12,765 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:18,433 - INFO - Agent saved
+2024-09-15 19:59:18,433 - INFO - Game Over. Distance: 957.00, Best Reward: 0.00
+2024-09-15 19:59:24,331 - INFO - Agent saved
+2024-09-15 19:59:24,331 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:30,242 - INFO - Agent saved
+2024-09-15 19:59:30,242 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:36,131 - INFO - Agent saved
+2024-09-15 19:59:36,131 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:42,028 - INFO - Agent saved
+2024-09-15 19:59:42,028 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:47,917 - INFO - Agent saved
+2024-09-15 19:59:47,917 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:53,772 - INFO - Agent saved
+2024-09-15 19:59:53,772 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 19:59:59,705 - INFO - Agent saved
+2024-09-15 19:59:59,705 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:00:05,623 - INFO - Agent saved
+2024-09-15 20:00:05,623 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:00:11,520 - INFO - Agent saved
+2024-09-15 20:00:11,521 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:00:17,424 - INFO - Agent saved
+2024-09-15 20:00:17,424 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:00:23,314 - INFO - Agent saved
+2024-09-15 20:00:23,314 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:00:29,219 - INFO - Agent saved
+2024-09-15 20:00:29,219 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:00:35,082 - INFO - Agent saved
+2024-09-15 20:00:35,082 - INFO - Game Over. Distance: 996.00, Best Reward: 0.00
+2024-09-15 20:00:40,975 - INFO - Agent saved
+2024-09-15 20:00:40,975 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:00:46,551 - INFO - Agent saved
+2024-09-15 20:00:46,552 - INFO - Game Over. Distance: 942.00, Best Reward: 0.00
+2024-09-15 20:00:52,451 - INFO - Agent saved
+2024-09-15 20:00:52,451 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:00:58,337 - INFO - Agent saved
+2024-09-15 20:00:58,337 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:01:04,266 - INFO - Agent saved
+2024-09-15 20:01:04,266 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:01:10,144 - INFO - Agent saved
+2024-09-15 20:01:10,144 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:01:16,044 - INFO - Agent saved
+2024-09-15 20:01:16,044 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:01:21,979 - INFO - Agent saved
+2024-09-15 20:01:21,979 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:01:27,678 - INFO - Agent saved
+2024-09-15 20:01:27,679 - INFO - Game Over. Distance: 963.00, Best Reward: 0.00
+2024-09-15 20:01:33,624 - INFO - Agent saved
+2024-09-15 20:01:33,624 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:01:38,883 - INFO - Agent saved
+2024-09-15 20:01:38,883 - INFO - Game Over. Distance: 891.00, Best Reward: 0.00
+2024-09-15 20:01:44,768 - INFO - Agent saved
+2024-09-15 20:01:44,768 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:01:50,641 - INFO - Agent saved
+2024-09-15 20:01:50,642 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:01:56,440 - INFO - Agent saved
+2024-09-15 20:01:56,440 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:02,347 - INFO - Agent saved
+2024-09-15 20:02:02,347 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:08,224 - INFO - Agent saved
+2024-09-15 20:02:08,224 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:14,097 - INFO - Agent saved
+2024-09-15 20:02:14,097 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:19,998 - INFO - Agent saved
+2024-09-15 20:02:19,998 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:25,904 - INFO - Agent saved
+2024-09-15 20:02:25,904 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:31,827 - INFO - Agent saved
+2024-09-15 20:02:31,827 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:37,714 - INFO - Agent saved
+2024-09-15 20:02:37,715 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:43,602 - INFO - Agent saved
+2024-09-15 20:02:43,602 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:49,511 - INFO - Agent saved
+2024-09-15 20:02:49,511 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:02:55,408 - INFO - Agent saved
+2024-09-15 20:02:55,408 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:01,342 - INFO - Agent saved
+2024-09-15 20:03:01,343 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:07,236 - INFO - Agent saved
+2024-09-15 20:03:07,236 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:13,157 - INFO - Agent saved
+2024-09-15 20:03:13,157 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:19,067 - INFO - Agent saved
+2024-09-15 20:03:19,067 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:24,930 - INFO - Agent saved
+2024-09-15 20:03:24,930 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:30,872 - INFO - Agent saved
+2024-09-15 20:03:30,872 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:36,744 - INFO - Agent saved
+2024-09-15 20:03:36,745 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:42,647 - INFO - Agent saved
+2024-09-15 20:03:42,647 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:48,601 - INFO - Agent saved
+2024-09-15 20:03:48,601 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:03:54,053 - INFO - Agent saved
+2024-09-15 20:03:54,053 - INFO - Game Over. Distance: 924.00, Best Reward: 0.00
+2024-09-15 20:04:00,002 - INFO - Agent saved
+2024-09-15 20:04:00,002 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:04:05,892 - INFO - Agent saved
+2024-09-15 20:04:05,892 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:04:11,795 - INFO - Agent saved
+2024-09-15 20:04:11,795 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:04:17,702 - INFO - Agent saved
+2024-09-15 20:04:17,703 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:04:23,616 - INFO - Agent saved
+2024-09-15 20:04:23,617 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:04:29,501 - INFO - Agent saved
+2024-09-15 20:04:29,501 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:04:35,391 - INFO - Agent saved
+2024-09-15 20:04:35,392 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:04:41,289 - INFO - Agent saved
+2024-09-15 20:04:41,289 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:04:46,790 - INFO - Agent saved
+2024-09-15 20:04:46,790 - INFO - Game Over. Distance: 933.00, Best Reward: 0.00
+2024-09-15 20:04:52,765 - INFO - Agent saved
+2024-09-15 20:04:52,765 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:04:58,643 - INFO - Agent saved
+2024-09-15 20:04:58,643 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:05:04,525 - INFO - Agent saved
+2024-09-15 20:05:04,526 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:05:10,195 - INFO - Agent saved
+2024-09-15 20:05:10,195 - INFO - Game Over. Distance: 963.00, Best Reward: 0.00
+2024-09-15 20:05:16,099 - INFO - Agent saved
+2024-09-15 20:05:16,099 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:05:22,041 - INFO - Agent saved
+2024-09-15 20:05:22,041 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:05:27,944 - INFO - Agent saved
+2024-09-15 20:05:27,944 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:05:33,836 - INFO - Agent saved
+2024-09-15 20:05:33,836 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:05:39,726 - INFO - Agent saved
+2024-09-15 20:05:39,726 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:05:45,617 - INFO - Agent saved
+2024-09-15 20:05:45,617 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:05:51,547 - INFO - Agent saved
+2024-09-15 20:05:51,547 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:05:57,483 - INFO - Agent saved
+2024-09-15 20:05:57,483 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:06:03,367 - INFO - Agent saved
+2024-09-15 20:06:03,367 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:06:09,300 - INFO - Agent saved
+2024-09-15 20:06:09,300 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:06:15,189 - INFO - Agent saved
+2024-09-15 20:06:15,189 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:06:20,309 - INFO - Agent saved
+2024-09-15 20:06:20,309 - INFO - Game Over. Distance: 858.00, Best Reward: 0.00
+2024-09-15 20:06:26,205 - INFO - Agent saved
+2024-09-15 20:06:26,205 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:06:32,102 - INFO - Agent saved
+2024-09-15 20:06:32,102 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:06:37,950 - INFO - Agent saved
+2024-09-15 20:06:37,950 - INFO - Game Over. Distance: 990.00, Best Reward: 0.00
+2024-09-15 20:06:43,905 - INFO - Agent saved
+2024-09-15 20:06:43,906 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:06:49,773 - INFO - Agent saved
+2024-09-15 20:06:49,773 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:06:55,672 - INFO - Agent saved
+2024-09-15 20:06:55,672 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:01,577 - INFO - Agent saved
+2024-09-15 20:07:01,577 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:07,464 - INFO - Agent saved
+2024-09-15 20:07:07,464 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:13,397 - INFO - Agent saved
+2024-09-15 20:07:13,397 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:19,298 - INFO - Agent saved
+2024-09-15 20:07:19,298 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:25,214 - INFO - Agent saved
+2024-09-15 20:07:25,214 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:31,091 - INFO - Agent saved
+2024-09-15 20:07:31,091 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:36,998 - INFO - Agent saved
+2024-09-15 20:07:36,998 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:42,949 - INFO - Agent saved
+2024-09-15 20:07:42,949 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:48,886 - INFO - Agent saved
+2024-09-15 20:07:48,886 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:07:54,774 - INFO - Agent saved
+2024-09-15 20:07:54,774 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:00,694 - INFO - Agent saved
+2024-09-15 20:08:00,695 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:06,629 - INFO - Agent saved
+2024-09-15 20:08:06,629 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:12,544 - INFO - Agent saved
+2024-09-15 20:08:12,544 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:18,439 - INFO - Agent saved
+2024-09-15 20:08:18,439 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:24,347 - INFO - Agent saved
+2024-09-15 20:08:24,347 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:30,233 - INFO - Agent saved
+2024-09-15 20:08:30,233 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:36,202 - INFO - Agent saved
+2024-09-15 20:08:36,202 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:42,112 - INFO - Agent saved
+2024-09-15 20:08:42,112 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:47,781 - INFO - Agent saved
+2024-09-15 20:08:47,781 - INFO - Game Over. Distance: 957.00, Best Reward: 0.00
+2024-09-15 20:08:53,697 - INFO - Agent saved
+2024-09-15 20:08:53,697 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:08:59,635 - INFO - Agent saved
+2024-09-15 20:08:59,635 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:09:05,583 - INFO - Agent saved
+2024-09-15 20:09:05,583 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:09:11,568 - INFO - Agent saved
+2024-09-15 20:09:11,569 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:09:17,425 - INFO - Agent saved
+2024-09-15 20:09:17,425 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:09:23,291 - INFO - Agent saved
+2024-09-15 20:09:23,291 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:09:29,253 - INFO - Agent saved
+2024-09-15 20:09:29,253 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:09:35,159 - INFO - Agent saved
+2024-09-15 20:09:35,159 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:09:41,077 - INFO - Agent saved
+2024-09-15 20:09:41,077 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:09:46,977 - INFO - Agent saved
+2024-09-15 20:09:46,977 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:09:52,163 - INFO - Agent saved
+2024-09-15 20:09:52,163 - INFO - Game Over. Distance: 864.00, Best Reward: 0.00
+2024-09-15 20:09:58,096 - INFO - Agent saved
+2024-09-15 20:09:58,096 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:04,032 - INFO - Agent saved
+2024-09-15 20:10:04,032 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:09,944 - INFO - Agent saved
+2024-09-15 20:10:09,944 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:15,872 - INFO - Agent saved
+2024-09-15 20:10:15,873 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:21,799 - INFO - Agent saved
+2024-09-15 20:10:21,799 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:27,722 - INFO - Agent saved
+2024-09-15 20:10:27,722 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:33,618 - INFO - Agent saved
+2024-09-15 20:10:33,618 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:39,540 - INFO - Agent saved
+2024-09-15 20:10:39,540 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:45,529 - INFO - Agent saved
+2024-09-15 20:10:45,529 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:51,482 - INFO - Agent saved
+2024-09-15 20:10:51,482 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:10:57,399 - INFO - Agent saved
+2024-09-15 20:10:57,399 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:03,281 - INFO - Agent saved
+2024-09-15 20:11:03,281 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:09,176 - INFO - Agent saved
+2024-09-15 20:11:09,176 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:15,153 - INFO - Agent saved
+2024-09-15 20:11:15,153 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:20,988 - INFO - Agent saved
+2024-09-15 20:11:20,988 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:26,758 - INFO - Agent saved
+2024-09-15 20:11:26,758 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:32,457 - INFO - Agent saved
+2024-09-15 20:11:32,458 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:38,410 - INFO - Agent saved
+2024-09-15 20:11:38,410 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:44,325 - INFO - Agent saved
+2024-09-15 20:11:44,326 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:50,242 - INFO - Agent saved
+2024-09-15 20:11:50,242 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:11:56,153 - INFO - Agent saved
+2024-09-15 20:11:56,153 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:12:02,111 - INFO - Agent saved
+2024-09-15 20:12:02,111 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:12:08,040 - INFO - Agent saved
+2024-09-15 20:12:08,040 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:12:13,934 - INFO - Agent saved
+2024-09-15 20:12:13,934 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:12:19,880 - INFO - Agent saved
+2024-09-15 20:12:19,880 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:12:25,860 - INFO - Agent saved
+2024-09-15 20:12:25,860 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:12:31,761 - INFO - Agent saved
+2024-09-15 20:12:31,761 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:12:37,664 - INFO - Agent saved
+2024-09-15 20:12:37,664 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:12:43,591 - INFO - Agent saved
+2024-09-15 20:12:43,592 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:12:48,929 - INFO - Agent saved
+2024-09-15 20:12:48,929 - INFO - Game Over. Distance: 885.00, Best Reward: 0.00
+2024-09-15 20:12:54,834 - INFO - Agent saved
+2024-09-15 20:12:54,834 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:00,749 - INFO - Agent saved
+2024-09-15 20:13:00,749 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:06,662 - INFO - Agent saved
+2024-09-15 20:13:06,662 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:12,576 - INFO - Agent saved
+2024-09-15 20:13:12,576 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:18,582 - INFO - Agent saved
+2024-09-15 20:13:18,582 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:24,502 - INFO - Agent saved
+2024-09-15 20:13:24,502 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:30,389 - INFO - Agent saved
+2024-09-15 20:13:30,389 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:36,239 - INFO - Agent saved
+2024-09-15 20:13:36,239 - INFO - Game Over. Distance: 987.00, Best Reward: 0.00
+2024-09-15 20:13:42,186 - INFO - Agent saved
+2024-09-15 20:13:42,186 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:48,089 - INFO - Agent saved
+2024-09-15 20:13:48,089 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:54,051 - INFO - Agent saved
+2024-09-15 20:13:54,051 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:13:59,989 - INFO - Agent saved
+2024-09-15 20:13:59,989 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:14:05,937 - INFO - Agent saved
+2024-09-15 20:14:05,937 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:14:11,845 - INFO - Agent saved
+2024-09-15 20:14:11,845 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:14:17,754 - INFO - Agent saved
+2024-09-15 20:14:17,754 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:14:23,670 - INFO - Agent saved
+2024-09-15 20:14:23,670 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:14:29,352 - INFO - Agent saved
+2024-09-15 20:14:29,353 - INFO - Game Over. Distance: 954.00, Best Reward: 0.00
+2024-09-15 20:14:35,275 - INFO - Agent saved
+2024-09-15 20:14:35,275 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:14:41,198 - INFO - Agent saved
+2024-09-15 20:14:41,198 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:14:46,646 - INFO - Agent saved
+2024-09-15 20:14:46,646 - INFO - Game Over. Distance: 915.00, Best Reward: 0.00
+2024-09-15 20:14:52,600 - INFO - Agent saved
+2024-09-15 20:14:52,600 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:14:58,510 - INFO - Agent saved
+2024-09-15 20:14:58,510 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:15:04,412 - INFO - Agent saved
+2024-09-15 20:15:04,412 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:15:10,268 - INFO - Agent saved
+2024-09-15 20:15:10,268 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:15:16,002 - INFO - Agent saved
+2024-09-15 20:15:16,003 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:15:21,774 - INFO - Agent saved
+2024-09-15 20:15:21,774 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:15:27,506 - INFO - Agent saved
+2024-09-15 20:15:27,506 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00
+2024-09-15 20:15:33,256 - INFO - Agent saved
+2024-09-15 20:15:33,257 - INFO - Game Over. Distance: 999.00, Best Reward: 0.00

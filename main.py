@@ -1,4 +1,6 @@
 import random
+import gym
+from gym import spaces
 import pygame
 import torch
 import torch.nn as nn
@@ -227,7 +229,7 @@ class Player:
     def get_collision_rect(self):
         return self.collision_rect  # Return the smaller collision rectangle
 
-    def update(self, gravity):
+    def update(self, gravity, colliding):
         # Apply gravity or booster effect
         if self.dead:
             return
@@ -258,7 +260,7 @@ class Player:
             self.player_rect.x + 10, self.player_rect.y + 15, 44, 50  # Tuned dimensions
         )
 
-    def draw(self):
+    def draw(self, screen):
         # Draw the player and booster particles
         play = screen.blit(self.player_surface, self.player_rect)
         if self.booster:
@@ -328,7 +330,7 @@ class Laser:
         if len(self.lasers) == 0 or self.lasers[-1][1][0] < WIDTH - 400:
             self.new_laser = True
 
-    def draw(self):
+    def draw(self, screen):
         # Draw each laser sprite at its corresponding coordinates
         for lase in self.lasers:
 
@@ -378,10 +380,7 @@ class Rocket:
             ),
         )
 
-    def update(
-        self,
-        game_speed,
-    ):
+    def update(self, game_speed, colliding):
 
         if not self.active:
             self.counter += 1
@@ -403,7 +402,7 @@ class Rocket:
             if self.coords[0] < -50:
                 self.active = False
 
-    def draw(self):
+    def draw(self, screen):
         if self.active:
             if self.delay < 90:
                 # Draw warning indicator before the rocket enters the screen
@@ -450,13 +449,13 @@ class UI:
         if self.distance > self.high_score:
             self.high_score = self.distance
 
-    def draw_bg(self):
+    def draw_bg(self, screen):
         screen.blit(self.bg_surface, (self.bg_x, 0))  # First background
         screen.blit(
             self.bg_surface, (self.bg_x + self.bg_surface.get_width(), 0)
         )  # Second background
 
-    def draw_score(self):
+    def draw_score(self, screen):
         screen.blit(
             font.render(f"Distance: {int(self.distance)} m", True, "white"), (10, 10)
         )
@@ -486,23 +485,7 @@ class Game:
         self.seed = seed
         self.state_dim = 12  # Updated state dimension
         self.action_dim = 2
-        self.agent = PPOAgent(self.state_dim, self.action_dim)
-        self.best_reward = float("-inf")
-
-        # if self.seed is not None:
-        #     self.set_seed(self.seed)
-        self.previous_distance_to_obstacle = None
-
-        self.load_agent()
-
-    def set_seed(self, seed):
-        random.seed(seed)
-        np.random.seed(seed)
-        torch.manual_seed(seed)
-        pygame.init()
-        pygame.display.set_mode([WIDTH, HEIGHT])
-        pygame.display.set_caption("Jetpack Joyride Remake in Python!")
-        logging.info(f"Game seed set to: {seed}")
+        self.distance = 0
 
     def get_state(self):
         if self.laser.lasers:
@@ -532,20 +515,23 @@ class Game:
         game_speed = self.game_speed / 10.0  # Assuming max game_speed of 10
         missile_active = 1.0 if self.rocket.active else 0.0
 
-        return [
-            player_y,
-            player_y_velocity,
-            game_speed,
-            laser1_x,
-            laser1_y_top,
-            laser1_y_bottom,
-            laser2_x,
-            laser2_y_top,
-            laser2_y_bottom,
-            missile_up,
-            missile_horizontal,
-            missile_active,
-        ]
+        return torch.tensor(
+            [
+                player_y,
+                player_y_velocity,
+                game_speed,
+                laser1_x,
+                laser1_y_top,
+                laser1_y_bottom,
+                laser2_x,
+                laser2_y_top,
+                laser2_y_bottom,
+                missile_up,
+                missile_horizontal,
+                missile_active,
+            ],
+            dtype=torch.float32,
+        )
 
     def compute_reward(
         self,
@@ -650,51 +636,64 @@ class Game:
                 return distance, obstacle_y_start, obstacle_y_end
         return None, None, None
 
-    def update(self):
-        state = self.get_state()
-        action, log_prob, value = self.agent.choose_action(state)
-
-        self.player.booster = action == 1
-        self.player.update(GRAVITY)
+    def update(self, action):
+        self.distance += self.game_speed
         self.laser.update(self.game_speed)
-        self.rocket.update(self.game_speed)
-        self.ui.update(self.game_speed)
-
+        self.player.booster = action == 1
+        self.player.update(GRAVITY, (False, False))
+        self.rocket.update(self.game_speed, self.player.y)
         # Check for collisions
-        player_rect = self.player.get_collision_rect()
-        collision = self.laser.check_collision(
+        player_rect = self.player.player_rect
+        if self.laser.check_collision(player_rect) or self.rocket.check_collision(
             player_rect
-        ) or self.rocket.check_collision(player_rect)
-        distance_to_obstacle, obstacle_y_position, obstacle_height = (
-            self.get_distance_to_next_obstacle()
-        )
-        missile_distance = self.rocket.coords[0] - 120 if self.rocket.active else None
-        missile_y = self.rocket.coords[1] if self.rocket.active else None
-        # Compute reward
-        reward = self.compute_reward(
-            collision,
-            distance_to_obstacle,
-            obstacle_y_position,
-            obstacle_height,
-            missile_distance,
-            missile_y,
-        )
+        ):
+            self.player.dead = True
 
-        done = collision
+        # def update(self):
+        # state = self.get_state()
+        # action, log_prob, value = self.agent.choose_action(state)
 
-        next_state = self.get_state()
-        self.agent.memory.add(state, action, reward, value, log_prob, done)
+        # self.player.booster = action == 1
+        # self.player.update(GRAVITY)
+        # self.laser.update(self.game_speed)
+        # self.rocket.update(self.game_speed)
+        # self.ui.update(self.game_speed)
 
-        if done:
-            self.agent.update()
-            self.agent.add_score(self.ui.distance)
-            self.save_agent()
-            logging.info(
-                f"Game Over. Distance: {self.ui.distance:.2f}, Best Reward: {self.best_reward:.2f}"
-            )
-            self.reset()
+        # # Check for collisions
+        # player_rect = self.player.get_collision_rect()
+        # collision = self.laser.check_collision(
+        #     player_rect
+        # ) or self.rocket.check_collision(player_rect)
+        # distance_to_obstacle, obstacle_y_position, obstacle_height = (
+        #     self.get_distance_to_next_obstacle()
+        # )
+        # missile_distance = self.rocket.coords[0] - 120 if self.rocket.active else None
+        # missile_y = self.rocket.coords[1] if self.rocket.active else None
+        # # Compute reward
+        # reward = self.compute_reward(
+        #     collision,
+        #     distance_to_obstacle,
+        #     obstacle_y_position,
+        #     obstacle_height,
+        #     missile_distance,
+        #     missile_y,
+        # )
 
-        return done
+        # done = collision
+
+        # next_state = self.get_state()
+        # self.agent.memory.add(state, action, reward, value, log_prob, done)
+
+        # if done:
+        #     self.agent.update()
+        #     self.agent.add_score(self.ui.distance)
+        #     self.save_agent()
+        #     logging.info(
+        #         f"Game Over. Distance: {self.ui.distance:.2f}, Best Reward: {self.best_reward:.2f}"
+        #     )
+        #     self.reset()
+
+        # return done
 
     def reset(self):
         self.player = Player()
@@ -708,13 +707,13 @@ class Game:
         self.infront_obstacle = False
         self.close_to_missile = False
 
-    def draw(self):
+    def draw(self, screen):
         screen.fill("black")
-        self.ui.draw_bg()
-        self.laser.draw()
-        self.player.draw()
-        self.rocket.draw()
-        self.ui.draw_score()
+        self.ui.draw_bg(screen)
+        self.laser.draw(screen)
+        self.player.draw(screen)
+        self.rocket.draw(screen)
+        self.ui.draw_score(screen)
         pygame.display.flip()
 
     def run(self):
@@ -746,6 +745,71 @@ class Game:
             logging.info("No saved agent found. Starting with a new agent.")
 
 
-if __name__ == "__main__":
-    game = Game(seed=42)
-    game.run()
+class JetpackJoyrideEnv(gym.Env):
+    metadata = {"render.modes": ["human"]}
+
+    def __init__(self, render_mode=None):
+        super(JetpackJoyrideEnv, self).__init__()
+
+        # Define action and observation space
+        self.action_space = spaces.Discrete(2)  # 0: booster off, 1: booster on
+        self.observation_space = spaces.Box(
+            low=-np.inf, high=np.inf, shape=(12,), dtype=np.float32
+        )
+
+        # Initialize game
+        self.render_mode = render_mode
+        self.game = Game()
+        self.player = self.game.player
+
+        if render_mode == "human":
+            pygame.init()
+            self.screen = pygame.display.set_mode([WIDTH, HEIGHT])
+            pygame.display.set_caption("Jetpack Joyride Remake in Python!")
+        else:
+            self.screen = None  # No rendering
+
+    def reset(self, seed=None, options=None):
+        super().reset(seed=seed)
+        # Reset the game to the initial state
+        if np.random.rand() < 0.005:
+            print("Resetting game, previous distance: ", self.game.distance)
+        self.game = Game()
+        self.player = self.game.player
+        obs = self.game.get_state().numpy()
+        return obs, {}
+
+    def step(self, action):
+        # Apply action
+        self.game.update(action)
+
+        # Get observation
+        obs = self.game.get_state().numpy()
+
+        # Compute reward
+        reward = 1  # Reward for staying alive
+
+        # Check if done
+        done = self.player.dead
+
+        if done:
+            reward -= 100  # Penalty for dying
+
+        # Additional info (optional)
+        info = {"distance": self.game.distance}
+
+        if self.render_mode == "human":
+            self.render()
+
+        return obs, reward, done, False, info
+
+    def render(self):
+        # Draw the game
+        self.game.draw(self.screen)
+
+    def close(self):
+        if self.render_mode == "human":
+            pygame.quit()
+
+    def get_distance(self):
+        return self.game.distance
