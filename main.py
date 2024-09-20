@@ -1,6 +1,8 @@
 import random
+import numpy as np
 import pygame
 import torch
+import imageio
 
 from Population import Population
 
@@ -10,7 +12,7 @@ HEIGHT = 600
 FPS = 60
 INIT_Y = HEIGHT - 130
 GRAVITY = 0.4
-
+VIDEO_STEPS_JUMP = 10
 # Initialize pygame
 pygame.init()
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
@@ -344,20 +346,8 @@ class Game:
         self.ui = UI()
         self.seed = seed  # Store the seed
 
-        # if self.seed is not None:
-        #     self.set_seed(self.seed)
-
-    def set_seed(self, seed):
-        """Set the random seed for deterministic behavior."""
-        import numpy as np
-
-        random.seed(seed)  # Set Python's built-in RNG
-        np.random.seed(seed)  # Set NumPy's RNG (if used)
-        torch.manual_seed(seed)  # Set Torch's RNG
-        pygame.init()  # Re-initialize pygame to reset RNG behavior
-        pygame.display.set_mode([WIDTH, HEIGHT])  # Reset pygame's display
-        pygame.display.set_caption("Jetpack Joyride Remake in Python!")
-        print(f"Game seed set to: {seed}")
+        self.frames = []
+        self.recording = True
 
     def run(self):
         running = True
@@ -381,6 +371,14 @@ class Game:
                 if self.is_in_preview and self.population.preview_done():
                     running = False
                 self.step += 1
+                if self.recording:
+                    output_filename = f"game_recording_generation_{self.step}.mp4"
+                    imageio.mimsave(output_filename, self.frames, fps=FPS)
+                    self.recording = False
+                    self.frames = []
+
+                if self.step % VIDEO_STEPS_JUMP == 0:
+                    self.recording = True
 
     def update(self):
         self.distance += self.game_speed
@@ -420,6 +418,9 @@ class Game:
         else:
             self.ui.draw_score()
         pygame.display.flip()
+        if self.recording:
+            frame = pygame.surfarray.array3d(screen)  # Capture the screen
+            self.frames.append(np.rot90(np.fliplr(frame)))
 
     def get_state(self, player):
         # Get the closest lasers and missile position relative to the player
