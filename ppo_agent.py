@@ -206,6 +206,7 @@ def train():
             )
             writer.add_scalar("Average Reward", running_reward, i_episode)
             writer.add_scalar("Distance", env.game.distance, i_episode)
+
             running_reward = 0
             avg_length = 0
             if i_episode % 1000 == 0:
