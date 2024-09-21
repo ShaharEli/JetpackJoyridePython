@@ -641,7 +641,7 @@ class Game:
         self.laser.update(self.game_speed)
         self.player.booster = action == 1
         self.player.update(GRAVITY, (False, False))
-        # self.rocket.update(self.game_speed, self.player.y)
+        self.rocket.update(self.game_speed, self.player.y)
         # Check for collisions
         player_rect = self.player.player_rect
         if self.laser.check_collision(player_rect) or self.rocket.check_collision(
