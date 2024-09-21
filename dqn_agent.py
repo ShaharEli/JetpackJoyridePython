@@ -16,7 +16,7 @@ env_name = "JetpackJoyride-v0"
 render = False
 log_interval = 20
 max_episodes = 100000
-max_timesteps = 200000
+max_timesteps = 1000000
 
 batch_size = 64
 gamma = 0.99  # Discount factor
