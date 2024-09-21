@@ -649,52 +649,6 @@ class Game:
         ):
             self.player.dead = True
 
-        # def update(self):
-        # state = self.get_state()
-        # action, log_prob, value = self.agent.choose_action(state)
-
-        # self.player.booster = action == 1
-        # self.player.update(GRAVITY)
-        # self.laser.update(self.game_speed)
-        # self.rocket.update(self.game_speed)
-        # self.ui.update(self.game_speed)
-
-        # # Check for collisions
-        # player_rect = self.player.get_collision_rect()
-        # collision = self.laser.check_collision(
-        #     player_rect
-        # ) or self.rocket.check_collision(player_rect)
-        # distance_to_obstacle, obstacle_y_position, obstacle_height = (
-        #     self.get_distance_to_next_obstacle()
-        # )
-        # missile_distance = self.rocket.coords[0] - 120 if self.rocket.active else None
-        # missile_y = self.rocket.coords[1] if self.rocket.active else None
-        # # Compute reward
-        # reward = self.compute_reward(
-        #     collision,
-        #     distance_to_obstacle,
-        #     obstacle_y_position,
-        #     obstacle_height,
-        #     missile_distance,
-        #     missile_y,
-        # )
-
-        # done = collision
-
-        # next_state = self.get_state()
-        # self.agent.memory.add(state, action, reward, value, log_prob, done)
-
-        # if done:
-        #     self.agent.update()
-        #     self.agent.add_score(self.ui.distance)
-        #     self.save_agent()
-        #     logging.info(
-        #         f"Game Over. Distance: {self.ui.distance:.2f}, Best Reward: {self.best_reward:.2f}"
-        #     )
-        #     self.reset()
-
-        # return done
-
     def reset(self):
         self.player = Player()
         self.laser = Laser()

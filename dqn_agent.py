@@ -24,7 +24,7 @@ lr = 1e-4  # Learning rate
 memory_size = 100000  # Replay buffer size
 target_update = 1000  # Update target network every n steps
 epsilon_start = 1.0  # Starting value of epsilon
-epsilon_end = 0.01  # Minimum value of epsilon
+epsilon_end = 0.03  # Minimum value of epsilon
 epsilon_decay = 375000  # Decay rate of epsilon
 
 random_seed = None
@@ -73,7 +73,7 @@ class DQN(nn.Module):
 
 
 def train():
-    env = JetpackJoyrideEnv()
+    env = JetpackJoyrideEnv(render_mode="human" if render else None)
     state_dim = env.observation_space.shape[0]
     action_dim = env.action_space.n
 
