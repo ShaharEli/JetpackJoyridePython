@@ -319,6 +319,7 @@ class Game:
         warm_up_generations_before_rockets=0,
         is_in_preview=False,
         seed=None,
+        is_recording=False,
     ):
         self.game_speed = 3
         self.step = 0
@@ -350,7 +351,8 @@ class Game:
             self.scores = json.load(file)
 
         self.frames = []
-        self.recording = True
+        self.recording = is_recording
+        self.in_recording = is_recording
 
     def run(self):
         running = True
@@ -376,14 +378,16 @@ class Game:
                     running = False
                 self.step += 1
                 if self.recording:
-                    # output_filename = f"game_recording_generation_without_rockets_{self.step}.mp4"
-                    # imageio.mimsave(output_filename, self.frames, fps=FPS)
-                    # self.recording = False
+                    output_filename = (
+                        f"game_recording_generation_without_rockets_{self.step}.mp4"
+                    )
+                    imageio.mimsave(output_filename, self.frames, fps=FPS)
+                    self.recording = False
                     self.frames = []
-                    with open('evolution_agent_without_rockets_scores.json', 'w') as f:
+                    with open("evolution_agent_without_rockets_scores.json", "w") as f:
                         json.dump(self.scores, f)
 
-                if self.step % VIDEO_STEPS_JUMP == 0:
+                if self.step % VIDEO_STEPS_JUMP == 0 and self.in_recording:
                     self.recording = True
 
     def update(self):
@@ -424,9 +428,9 @@ class Game:
         else:
             self.ui.draw_score()
         pygame.display.flip()
-        # if self.recording:
-        #     frame = pygame.surfarray.array3d(screen)  # Capture the screen
-        #     self.frames.append(np.rot90(np.fliplr(frame)))
+        if self.recording:
+            frame = pygame.surfarray.array3d(screen)  # Capture the screen
+            self.frames.append(np.rot90(np.fliplr(frame)))
 
     def get_state(self, player):
         # Get the closest lasers and missile position relative to the player
@@ -449,17 +453,16 @@ class Game:
         laser2_y_top = laser2[0][1] / HEIGHT
         laser2_y_bottom = laser2[1][1] / HEIGHT
         rocket = self.rockets[self.players.index(player)]
-        missile_up = rocket.coords[
-                         1] / HEIGHT if rocket.active else -1
-        missile_horizontal = rocket.coords[
-                                 0] / WIDTH if rocket.active else -1
+        missile_up = rocket.coords[1] / HEIGHT if rocket.active else -1
+        missile_horizontal = rocket.coords[0] / WIDTH if rocket.active else -1
 
         player_y = player.y / HEIGHT
-        player_y_velocity = player.y_velocity / 10.0  # Assuming max speed of 10
-        game_speed = self.game_speed / 10.0  # Assuming max game_speed of 10
+        player_y_velocity = player.y_velocity / 10.0
+        game_speed = self.game_speed / 10.0
         missile_active = 1.0 if rocket.active else 0.0
 
-        return  torch.tensor([
+        return torch.tensor(
+            [
                 player_y,
                 player_y_velocity,
                 game_speed,
@@ -472,10 +475,9 @@ class Game:
                 missile_up,
                 missile_horizontal,
                 missile_active,
-
             ],
             dtype=torch.float32,
-)
+        )
 
     def end_generation(self):
         # Evolve the population based on fitness
