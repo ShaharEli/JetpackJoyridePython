@@ -347,7 +347,7 @@ class Game:
         self.ui = UI()
         self.seed = seed  # Store the seed
         self.scores = []
-        with open("evolution_agent_without_rockets_scores.json", "r") as file:
+        with open("scores.json", "r") as file:
             self.scores = json.load(file)
 
         self.frames = []
@@ -384,7 +384,7 @@ class Game:
                     imageio.mimsave(output_filename, self.frames, fps=FPS)
                     self.recording = False
                     self.frames = []
-                    with open("evolution_agent_without_rockets_scores.json", "w") as f:
+                    with open('scores.json', 'w') as f:
                         json.dump(self.scores, f)
 
                 if self.step % VIDEO_STEPS_JUMP == 0 and self.in_recording:
@@ -400,9 +400,9 @@ class Game:
                 action = self.population.creatures[i].act(state)
                 player.booster = action == 1
                 player.update(GRAVITY, (False, False))
-                # if self.step >= self.warm_up_generations_before_rockets:
-                #     self.rockets[i].update(self.game_speed, player.y)
-                # # Check for collisions
+                if self.step >= self.warm_up_generations_before_rockets:
+                    self.rockets[i].update(self.game_speed, player.y)
+                # Check for collisions
                 player_rect = player.draw()
                 if self.laser.check_collision(player_rect) or self.rockets[
                     i
